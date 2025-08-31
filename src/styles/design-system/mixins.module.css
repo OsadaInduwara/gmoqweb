@@ -1,0 +1,577 @@
+/**
+ * CSS Mixins & Utilities
+ * Reusable patterns and common styles
+ */
+
+/* ========================================
+   LAYOUT MIXINS
+   ======================================== */
+
+/* Container Mixin */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+
+/* Flexbox Utilities */
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flexEnd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexColCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid Utilities */
+.gridAuto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-6);
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .grid3,
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
+   SPACING MIXINS
+   ======================================== */
+
+/* Section Spacing */
+.section {
+  padding: var(--space-24) 0;
+  position: relative;
+}
+
+.sectionSm {
+  padding: var(--space-16) 0;
+}
+
+.sectionLg {
+  padding: var(--space-32) 0;
+}
+
+.sectionXl {
+  padding: var(--space-40) 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+  
+  .sectionSm {
+    padding: var(--space-12) 0;
+  }
+  
+  .sectionLg {
+    padding: var(--space-20) 0;
+  }
+  
+  .sectionXl {
+    padding: var(--space-24) 0;
+  }
+}
+
+/* Margin Utilities */
+.marginAuto {
+  margin: 0 auto;
+}
+
+.maxWidthSm {
+  max-width: 640px;
+}
+
+.maxWidthMd {
+  max-width: 768px;
+}
+
+.maxWidthLg {
+  max-width: 1024px;
+}
+
+.maxWidthXl {
+  max-width: 1280px;
+}
+
+.maxWidth2xl {
+  max-width: 1536px;
+}
+
+/* ========================================
+   TYPOGRAPHY MIXINS
+   ======================================== */
+
+/* Text Size Classes */
+.textXs {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+.textSm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.textBase {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.textLg {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.textXl {
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+}
+
+.text2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+}
+
+.text3xl {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+}
+
+.text4xl {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+}
+
+.text5xl {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+}
+
+.text6xl {
+  font-size: var(--text-6xl);
+  line-height: var(--leading-tight);
+}
+
+/* Heading Styles */
+.heading1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.heading2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.heading3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+
+.heading4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+}
+
+.heading5 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-snug);
+}
+
+.heading6 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .heading1 {
+    font-size: var(--text-4xl);
+  }
+  
+  .heading2 {
+    font-size: var(--text-3xl);
+  }
+  
+  .heading3 {
+    font-size: var(--text-2xl);
+  }
+  
+  .heading4 {
+    font-size: var(--text-xl);
+  }
+}
+
+/* Text Colors */
+.textPrimary {
+  color: var(--text-primary);
+}
+
+.textSecondary {
+  color: var(--text-secondary);
+}
+
+.textTertiary {
+  color: var(--text-tertiary);
+}
+
+.textMuted {
+  color: var(--text-muted);
+}
+
+.textBrand {
+  color: var(--text-brand);
+}
+
+/* Brand Gradient Text */
+.textGradientBrand {
+  background: linear-gradient(
+    135deg,
+    var(--brand-red) 0%,
+    var(--brand-dark-red) 50%,
+    var(--brand-yellow) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ========================================
+   COMPONENT MIXINS
+   ======================================== */
+
+/* Card Base */
+.cardBase {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-all);
+}
+
+.cardHover:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+  border-color: var(--border-secondary);
+}
+
+/* Glass Effect */
+.glassEffect {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+}
+
+/* Button Base */
+.buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-xl);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-all);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttonPrimary {
+  composes: buttonBase;
+  background: linear-gradient(135deg, var(--brand-red), var(--brand-dark-red));
+  color: var(--text-on-brand);
+  box-shadow: var(--shadow-brand);
+}
+
+.buttonPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xl);
+}
+
+.buttonPrimary:active {
+  transform: translateY(0);
+}
+
+.buttonSecondary {
+  composes: buttonBase;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+}
+
+.buttonSecondary:hover {
+  background: var(--state-hover);
+  border-color: var(--border-secondary);
+}
+
+/* ========================================
+   ANIMATION MIXINS
+   ======================================== */
+
+/* Fade Animations */
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation var(--duration-500) var(--ease-out) forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpAnimation var(--duration-500) var(--ease-out) forwards;
+}
+
+@keyframes fadeInUpAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDownAnimation var(--duration-500) var(--ease-out) forwards;
+}
+
+@keyframes fadeInDownAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale Animations */
+.scaleIn {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: scaleInAnimation var(--duration-300) var(--ease-back) forwards;
+}
+
+@keyframes scaleInAnimation {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide Animations */
+.slideInLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeftAnimation var(--duration-500) var(--ease-out) forwards;
+}
+
+@keyframes slideInLeftAnimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInRightAnimation var(--duration-500) var(--ease-out) forwards;
+}
+
+@keyframes slideInRightAnimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover Effects */
+.hoverLift {
+  transition: transform var(--duration-200) var(--ease-out);
+}
+
+.hoverLift:hover {
+  transform: translateY(-4px);
+}
+
+.hoverScale {
+  transition: transform var(--duration-200) var(--ease-out);
+}
+
+.hoverScale:hover {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   UTILITY MIXINS
+   ======================================== */
+
+/* Focus States */
+.focusRing {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.focusRing:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+
+/* Visually Hidden */
+.srOnly {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Aspect Ratios */
+.aspectSquare {
+  aspect-ratio: 1 / 1;
+}
+
+.aspectVideo {
+  aspect-ratio: 16 / 9;
+}
+
+.aspectPhoto {
+  aspect-ratio: 4 / 3;
+}
+
+/* Object Fit */
+.objectCover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.objectContain {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Truncate Text */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lineClamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lineClamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

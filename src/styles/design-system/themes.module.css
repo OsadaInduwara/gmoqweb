@@ -1,0 +1,175 @@
+/**
+ * Theme System
+ * Light and Dark mode implementations
+ */
+
+/* ========================================
+   LIGHT THEME (DEFAULT)
+   ======================================== */
+.lightTheme {
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f4f4f5;
+  --bg-accent: #fef3c7;
+  --bg-muted: #f9fafb;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-card: #ffffff;
+  --bg-popover: #ffffff;
+
+  /* Text Colors */
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-tertiary: #71717a;
+  --text-muted: #a1a1aa;
+  --text-inverse: #ffffff;
+  --text-brand: var(--brand-red);
+  --text-on-brand: #ffffff;
+
+  /* Border Colors */
+  --border-primary: #e4e4e7;
+  --border-secondary: #d4d4d8;
+  --border-muted: #f4f4f5;
+  --border-focus: var(--brand-red);
+  --border-error: var(--error-500);
+  --border-success: var(--success-500);
+  --border-warning: var(--warning-500);
+
+  /* Interactive States */
+  --state-hover: rgba(0, 0, 0, 0.05);
+  --state-active: rgba(0, 0, 0, 0.1);
+  --state-disabled: #f4f4f5;
+  --state-focus: rgba(196, 0, 68, 0.1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --shadow-brand: 0 10px 25px rgba(196, 0, 68, 0.15);
+  --shadow-card: var(--shadow-md);
+  --shadow-card-hover: var(--shadow-lg);
+
+  /* Glass Effects */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --backdrop-blur: blur(16px);
+}
+
+/* ========================================
+   DARK THEME
+   ======================================== */
+.darkTheme {
+  /* Background Colors */
+  --bg-primary: #18181b;
+  --bg-secondary: #27272a;
+  --bg-tertiary: #3f3f46;
+  --bg-accent: rgba(247, 217, 59, 0.1);
+  --bg-muted: #1c1c1e;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-card: #27272a;
+  --bg-popover: #3f3f46;
+
+  /* Text Colors */
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d8;
+  --text-tertiary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-inverse: #18181b;
+  --text-brand: var(--brand-red);
+  --text-on-brand: #ffffff;
+
+  /* Border Colors */
+  --border-primary: #3f3f46;
+  --border-secondary: #52525b;
+  --border-muted: #27272a;
+  --border-focus: var(--brand-red);
+  --border-error: var(--error-400);
+  --border-success: var(--success-400);
+  --border-warning: var(--warning-400);
+
+  /* Interactive States */
+  --state-hover: rgba(255, 255, 255, 0.05);
+  --state-active: rgba(255, 255, 255, 0.1);
+  --state-disabled: #3f3f46;
+  --state-focus: rgba(196, 0, 68, 0.2);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.7);
+  --shadow-brand: 0 10px 25px rgba(196, 0, 68, 0.3);
+  --shadow-card: var(--shadow-md);
+  --shadow-card-hover: var(--shadow-lg);
+
+  /* Glass Effects */
+  --glass-bg: rgba(39, 39, 42, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --backdrop-blur: blur(16px);
+
+  /* Brand Color Adjustments for Dark Mode */
+  --brand-red-dark: #ff1e7c;
+  --brand-yellow-dark: #fbbf24;
+}
+
+/* ========================================
+   THEME UTILITIES
+   ======================================== */
+.themeTransition {
+  transition: background-color var(--duration-300) var(--ease-out),
+              border-color var(--duration-300) var(--ease-out),
+              color var(--duration-300) var(--ease-out);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .lightTheme,
+  .darkTheme {
+    --border-primary: currentColor;
+    --text-secondary: var(--text-primary);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .themeTransition {
+    transition: none;
+  }
+}
+
+/* Color Scheme Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY TOKENS
+   ======================================== */
+.a11y {
+  /* Focus Ring */
+  --focus-ring: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--border-focus);
+  --focus-ring-inset: inset 0 0 0 2px var(--border-focus);
+  
+  /* High Contrast Colors */
+  --contrast-low: rgba(0, 0, 0, 0.6);
+  --contrast-medium: rgba(0, 0, 0, 0.8);
+  --contrast-high: rgba(0, 0, 0, 1);
+  
+  /* Screen Reader Only */
+  --sr-only: absolute;
+  --sr-only-position: -1px;
+  --sr-only-size: 1px;
+  --sr-only-overflow: hidden;
+  --sr-only-clip: rect(0, 0, 0, 0);
+}

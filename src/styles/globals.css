@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Import Design System */
+@import './design-system/variables.module.css';
+@import './design-system/themes.module.css';
+@import './design-system/mixins.module.css';
+
+/**
+ * Global Styles - Minimal CSS Reset & Base Styles Only
+ * Component-specific styles moved to CSS Modules
+ */
+
+/* ========================================
+   CSS RESET & BASE
+   ======================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-primary);
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: var(--transition-colors);
+}
+
+/* ========================================
+   THEME APPLICATION
+   ======================================== */
+:root {
+  /* Apply light theme by default */
+  composes: lightTheme from './design-system/themes.module.css';
+  composes: brandColors from './design-system/variables.module.css';
+  composes: colorPalette from './design-system/variables.module.css';
+  composes: semanticColors from './design-system/variables.module.css';
+  composes: typography from './design-system/variables.module.css';
+  composes: spacing from './design-system/variables.module.css';
+  composes: sizing from './design-system/variables.module.css';
+  composes: animations from './design-system/variables.module.css';
+  composes: breakpoints from './design-system/variables.module.css';
+}
+
+.dark,
+[data-theme="dark"] {
+  composes: darkTheme from './design-system/themes.module.css';
+}
+
+/* ========================================
+   BASE TYPOGRAPHY
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+  color: var(--text-primary);
+}
+
+p, span, div {
+  margin: 0;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   GLOBAL UTILITIES (Minimal)
+   ======================================== */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(196, 0, 68, 0.2);
+  color: var(--text-primary);
+}
