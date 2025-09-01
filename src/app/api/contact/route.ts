@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 interface ContactFormData {
   name: string;
@@ -25,13 +25,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const emailTemplate = `
     <h2>New Contact Form Submission</h2>
@@ -49,18 +43,16 @@ export async function POST(req: NextRequest) {
     <p><em>This message was sent from the GMOQAI contact form.</em></p>
     `;
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: 'GMOQAI Contact <noreply@gmoqai.com>',
       to: 'induwaragallaba@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: emailTemplate,
-      replyTo: email,
-    };
+      reply_to: email,
+    });
 
-    await transporter.sendMail(mailOptions);
-
-    const autoReplyOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: 'GMOQAI Team <noreply@gmoqai.com>',
       to: email,
       subject: 'Thank you for contacting GMOQAI',
       html: `
@@ -79,9 +71,7 @@ export async function POST(req: NextRequest) {
       The GMOQAI Team<br>
       <a href="mailto:hello@gmoqai.com">hello@gmoqai.com</a></p>
       `,
-    };
-
-    await transporter.sendMail(autoReplyOptions);
+    });
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
