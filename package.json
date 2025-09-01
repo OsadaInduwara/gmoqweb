@@ -15,9 +15,11 @@
     "test:visual": "npm run build && npm run start"
   },
   "dependencies": {
+    "@types/nodemailer": "^7.0.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.542.0",
     "next": "15.5.2",
+    "nodemailer": "^7.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "resend": "^6.0.2"
