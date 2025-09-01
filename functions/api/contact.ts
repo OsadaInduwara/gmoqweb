@@ -9,9 +9,28 @@ interface ContactFormData {
   message: string;
 }
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+  'Content-Type': 'application/json'
+};
+
+export async function onRequestOptions() {
+  return new Response(null, {
+    status: 204,
+    headers: corsHeaders
+  });
+}
+
 export async function onRequestPost(context: { request: Request, env: any }) {
   try {
+    console.log('Contact form submission received');
+    console.log('Request method:', context.request.method);
+    console.log('Request headers:', Object.fromEntries(context.request.headers));
+    
     const body: ContactFormData = await context.request.json();
+    console.log('Request body:', body);
     
     const { name, email, company, phone, projectType, budget, timeline, message } = body;
 
@@ -20,7 +39,7 @@ export async function onRequestPost(context: { request: Request, env: any }) {
         error: 'Name, email, project type, and message are required'
       }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: corsHeaders
       });
     }
 
@@ -30,7 +49,7 @@ export async function onRequestPost(context: { request: Request, env: any }) {
         error: 'Email service not configured'
       }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: corsHeaders
       });
     }
 
@@ -118,7 +137,7 @@ export async function onRequestPost(context: { request: Request, env: any }) {
       message: 'Email sent successfully'
     }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' }
+      headers: corsHeaders
     });
 
   } catch (error) {
@@ -132,7 +151,7 @@ export async function onRequestPost(context: { request: Request, env: any }) {
       details: errorMessage
     }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      headers: corsHeaders
     });
   }
 }
