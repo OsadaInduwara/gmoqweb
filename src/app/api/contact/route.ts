@@ -25,6 +25,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not configured');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
+
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const emailTemplate = `
@@ -43,16 +51,23 @@ export async function POST(req: NextRequest) {
     <p><em>This message was sent from the GMOQAI contact form.</em></p>
     `;
 
-    await resend.emails.send({
-      from: 'GMOQAI Contact <noreply@gmoqai.com>',
+    // Send notification email
+    const notificationResult = await resend.emails.send({
+      from: 'GMOQAI Contact <onboarding@resend.dev>',
       to: 'induwaragallaba@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: emailTemplate,
       reply_to: email,
     });
 
-    await resend.emails.send({
-      from: 'GMOQAI Team <noreply@gmoqai.com>',
+    if (notificationResult.error) {
+      console.error('Failed to send notification email:', notificationResult.error);
+      throw new Error('Failed to send notification email');
+    }
+
+    // Send auto-reply email
+    const autoReplyResult = await resend.emails.send({
+      from: 'GMOQAI Team <onboarding@resend.dev>',
       to: email,
       subject: 'Thank you for contacting GMOQAI',
       html: `
@@ -73,6 +88,11 @@ export async function POST(req: NextRequest) {
       `,
     });
 
+    if (autoReplyResult.error) {
+      console.error('Failed to send auto-reply email:', autoReplyResult.error);
+      // Don't throw here - notification was sent successfully
+    }
+
     return NextResponse.json(
       { message: 'Email sent successfully' },
       { status: 200 }
@@ -80,8 +100,12 @@ export async function POST(req: NextRequest) {
 
   } catch (error) {
     console.error('Error sending email:', error);
+    
+    // Provide more specific error information
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send email', details: errorMessage },
       { status: 500 }
     );
   }
