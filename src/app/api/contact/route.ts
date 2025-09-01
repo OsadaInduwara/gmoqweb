@@ -51,23 +51,27 @@ export async function POST(req: NextRequest) {
     <p><em>This message was sent from the GMOQAI contact form.</em></p>
     `;
 
+    console.log('Attempting to send notification email with API key:', process.env.RESEND_API_KEY ? 'Present' : 'Missing');
+    
     // Send notification email
     const notificationResult = await resend.emails.send({
-      from: 'GMOQAI Contact <onboarding@resend.dev>',
+      from: 'GMOQAI Contact <noreply@gmoqai.com>',
       to: 'induwaragallaba@gmail.com',
       subject: `New Contact Form Submission from ${name}`,
       html: emailTemplate,
       reply_to: email,
     });
 
+    console.log('Notification email result:', notificationResult);
+
     if (notificationResult.error) {
-      console.error('Failed to send notification email:', notificationResult.error);
-      throw new Error('Failed to send notification email');
+      console.error('Failed to send notification email:', JSON.stringify(notificationResult.error, null, 2));
+      throw new Error(`Failed to send notification email: ${JSON.stringify(notificationResult.error)}`);
     }
 
     // Send auto-reply email
     const autoReplyResult = await resend.emails.send({
-      from: 'GMOQAI Team <onboarding@resend.dev>',
+      from: 'GMOQAI Team <noreply@gmoqai.com>',
       to: email,
       subject: 'Thank you for contacting GMOQAI',
       html: `
@@ -88,8 +92,10 @@ export async function POST(req: NextRequest) {
       `,
     });
 
+    console.log('Auto-reply email result:', autoReplyResult);
+
     if (autoReplyResult.error) {
-      console.error('Failed to send auto-reply email:', autoReplyResult.error);
+      console.error('Failed to send auto-reply email:', JSON.stringify(autoReplyResult.error, null, 2));
       // Don't throw here - notification was sent successfully
     }
 
