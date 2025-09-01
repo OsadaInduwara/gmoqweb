@@ -16,7 +16,19 @@ const corsHeaders = {
   'Content-Type': 'application/json'
 };
 
+export async function onRequestGet() {
+  console.log('GET request received for contact endpoint');
+  return new Response(JSON.stringify({
+    message: 'Contact endpoint is working',
+    methods: ['POST', 'OPTIONS']
+  }), {
+    status: 200,
+    headers: corsHeaders
+  });
+}
+
 export async function onRequestOptions() {
+  console.log('OPTIONS request received for contact');
   return new Response(null, {
     status: 204,
     headers: corsHeaders
