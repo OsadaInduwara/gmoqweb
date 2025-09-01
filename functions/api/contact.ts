@@ -11,40 +11,48 @@ interface ContactFormData {
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
   'Content-Type': 'application/json'
 };
 
-export async function onRequestGet() {
-  console.log('GET request received for contact endpoint');
-  return new Response(JSON.stringify({
-    message: 'Contact endpoint is working',
-    methods: ['POST', 'OPTIONS']
-  }), {
-    status: 200,
-    headers: corsHeaders
-  });
-}
+// Main function handler - handles all HTTP methods
+export default async function(context: any) {
+  const { request, env } = context;
+  const method = request.method;
 
-export async function onRequestOptions() {
-  console.log('OPTIONS request received for contact');
-  return new Response(null, {
-    status: 204,
-    headers: corsHeaders
-  });
-}
+  console.log(`${method} request received for contact endpoint`);
 
-export async function onRequestPost(context: { request: Request, env: any }) {
-  try {
-    console.log('Contact form submission received');
-    console.log('Request method:', context.request.method);
-    console.log('Request headers:', Object.fromEntries(context.request.headers));
-    
-    const body: ContactFormData = await context.request.json();
-    console.log('Request body:', body);
-    
-    const { name, email, company, phone, projectType, budget, timeline, message } = body;
+  // Handle CORS preflight
+  if (method === 'OPTIONS') {
+    return new Response(null, {
+      status: 204,
+      headers: corsHeaders
+    });
+  }
+
+  // Handle GET for testing
+  if (method === 'GET') {
+    return new Response(JSON.stringify({
+      message: 'Contact endpoint is working',
+      methods: ['GET', 'POST', 'OPTIONS']
+    }), {
+      status: 200,
+      headers: corsHeaders
+    });
+  }
+
+  // Handle POST for form submission
+  if (method === 'POST') {
+    try {
+      console.log('Contact form submission received');
+      console.log('Request method:', request.method);
+      console.log('Request headers:', Object.fromEntries(request.headers));
+      
+      const body: ContactFormData = await request.json();
+      console.log('Request body:', body);
+      
+      const { name, email, company, phone, projectType, budget, timeline, message } = body;
 
     if (!name || !email || !message || !projectType) {
       return new Response(JSON.stringify({
@@ -55,15 +63,15 @@ export async function onRequestPost(context: { request: Request, env: any }) {
       });
     }
 
-    if (!context.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not configured');
-      return new Response(JSON.stringify({
-        error: 'Email service not configured'
-      }), {
-        status: 500,
-        headers: corsHeaders
-      });
-    }
+      if (!env.RESEND_API_KEY) {
+        console.error('RESEND_API_KEY is not configured');
+        return new Response(JSON.stringify({
+          error: 'Email service not configured'
+        }), {
+          status: 500,
+          headers: corsHeaders
+        });
+      }
 
     const emailTemplate = `
     <h2>New Contact Form Submission</h2>
@@ -81,13 +89,13 @@ export async function onRequestPost(context: { request: Request, env: any }) {
     <p><em>This message was sent from the GMOQAI contact form.</em></p>
     `;
 
-    console.log('Attempting to send notification email with API key:', context.env.RESEND_API_KEY ? 'Present' : 'Missing');
+      console.log('Attempting to send notification email with API key:', env.RESEND_API_KEY ? 'Present' : 'Missing');
     
     // Send notification email
     const notificationResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
+        'Authorization': `Bearer ${env.RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -111,7 +119,7 @@ export async function onRequestPost(context: { request: Request, env: any }) {
     const autoReplyResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${context.env.RESEND_API_KEY}`,
+        'Authorization': `Bearer ${env.RESEND_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -145,25 +153,34 @@ export async function onRequestPost(context: { request: Request, env: any }) {
       // Don't throw here - notification was sent successfully
     }
 
-    return new Response(JSON.stringify({
-      message: 'Email sent successfully'
-    }), {
-      status: 200,
-      headers: corsHeaders
-    });
+      return new Response(JSON.stringify({
+        message: 'Email sent successfully'
+      }), {
+        status: 200,
+        headers: corsHeaders
+      });
 
-  } catch (error) {
-    console.error('Error sending email:', error);
-    
-    // Provide more specific error information
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-    
-    return new Response(JSON.stringify({
-      error: 'Failed to send email',
-      details: errorMessage
-    }), {
-      status: 500,
-      headers: corsHeaders
-    });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      
+      // Provide more specific error information
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      
+      return new Response(JSON.stringify({
+        error: 'Failed to send email',
+        details: errorMessage
+      }), {
+        status: 500,
+        headers: corsHeaders
+      });
+    }
   }
+
+  // Method not allowed
+  return new Response(JSON.stringify({
+    error: 'Method not allowed'
+  }), {
+    status: 405,
+    headers: corsHeaders
+  });
 }
