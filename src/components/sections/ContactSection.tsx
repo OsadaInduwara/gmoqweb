@@ -121,15 +121,33 @@ export const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/contact', {
+      console.log('Submitting form directly to Formspree...');
+      
+      // Submit directly to Formspree (forwards to your Gmail)
+      const response = await fetch('https://formspree.io/f/xanyrnok', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          email: formData.email,
+          name: formData.name,
+          company: formData.company || 'Not specified',
+          phone: formData.phone || 'Not specified',
+          projectType: formData.projectType,
+          budget: formData.budget || 'Not specified',
+          timeline: formData.timeline || 'Not specified',
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `GMOQAI Contact Form: ${formData.name} - ${formData.projectType}`
+        }),
       });
 
+      console.log('Formspree response status:', response.status);
+      
       if (response.ok) {
+        console.log('Form submitted successfully!');
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -142,6 +160,7 @@ export const ContactSection = () => {
           message: ''
         });
       } else {
+        console.error('Formspree error:', response.status);
         setSubmitStatus('error');
       }
     } catch (error: unknown) {
