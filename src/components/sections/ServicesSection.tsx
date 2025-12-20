@@ -47,7 +47,7 @@ const servicesData = [
     description: 'Tailored software solutions built from the ground up to meet your specific business requirements',
     features: [
       'Enterprise Applications',
-      'SaaS Platforms', 
+      'SaaS Platforms',
       'API Development',
       'Cloud Solutions'
     ],
@@ -109,20 +109,6 @@ const servicesData = [
     ],
     technologies: ['Python', 'R', 'Tableau', 'Power BI'],
     color: 'orange'
-  },
-  {
-    id: 'cloud-devops',
-    icon: Cloud,
-    title: 'Cloud & DevOps Services',
-    description: 'Scalable cloud infrastructure and streamlined deployment processes for optimal performance',
-    features: [
-      'Cloud Migration',
-      'Infrastructure as Code',
-      'CI/CD Pipelines',
-      'Container Orchestration'
-    ],
-    technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes'],
-    color: 'cyan'
   }
 ];
 
@@ -167,19 +153,19 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="services">
       <div className="services-container">
-        
+
         {/* Header */}
         <div className="services-header">
           <div className="section-divider-floating">
             <span className="section-divider-text">Our Services</span>
           </div>
-          
+
           <h2 className="text-primary mb-large">
             Comprehensive Technology Solutions
           </h2>
-          
+
           <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-            From AI-powered applications to cloud infrastructure, we deliver cutting-edge solutions 
+            From AI-powered applications to cloud infrastructure, we deliver cutting-edge solutions
             that transform your business and drive measurable growth.
           </p>
         </div>
@@ -189,7 +175,7 @@ export const ServicesSection = () => {
           {servicesData.map((service) => {
             const Icon = service.icon;
             const colors = colorClasses[service.color as ColorKey];
-            
+
             return (
               <div
                 key={service.id}
@@ -203,17 +189,17 @@ export const ServicesSection = () => {
                     <Icon />
                   </div>
                 </div>
-                
+
                 {/* Content */}
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-primary">
                     {service.title}
                   </h3>
-                  
+
                   <p className="text-secondary leading-relaxed">
                     {service.description}
                   </p>
-                  
+
                   {/* Features */}
                   <div className="space-y-2">
                     {service.features.slice(0, 3).map((feature) => (
@@ -223,7 +209,7 @@ export const ServicesSection = () => {
                       </div>
                     ))}
                   </div>
-                  
+
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 pt-2">
                     {service.technologies.slice(0, 3).map((tech) => (
@@ -250,11 +236,11 @@ export const ServicesSection = () => {
               Ready to Transform Your Business?
             </h3>
             <p className="text-secondary mb-large leading-relaxed">
-              Let&apos;s discuss how our expertise can help you achieve your technology goals. 
+              Let&apos;s discuss how our expertise can help you achieve your technology goals.
               Get a free consultation and project estimate.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button 
+              <button
                 onClick={() => {
                   const element = document.getElementById('contact');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -263,7 +249,7 @@ export const ServicesSection = () => {
               >
                 Get Free Consultation
               </button>
-              <button 
+              <button
                 onClick={() => {
                   const element = document.getElementById('portfolio');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });

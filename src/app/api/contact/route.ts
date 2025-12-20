@@ -14,11 +14,11 @@ interface ContactFormData {
 
 export async function POST(req: NextRequest) {
   console.log('=== CONTACT FORM API CALLED ===');
-  
+
   try {
     const body: ContactFormData = await req.json();
     console.log('Form data received:', body);
-    
+
     const { name, email, company, phone, projectType, budget, timeline, message } = body;
 
     if (!name || !email || !message || !projectType) {
@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error('=== EMAIL SENDING ERROR ===');
     console.error('Error details:', error);
-    
+
     return NextResponse.json(
       { error: 'Failed to send message. Please try again or contact us directly.' },
       { status: 500 }

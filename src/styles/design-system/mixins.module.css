@@ -309,8 +309,8 @@
 .textGradientBrand {
   background: linear-gradient(
     135deg,
-    var(--brand-red) 0%,
-    var(--brand-dark-red) 50%,
+    var(--brand-purple) 0%,
+    var(--brand-purple-dark) 50%,
     var(--brand-yellow) 100%
   );
   -webkit-background-clip: text;
@@ -378,7 +378,7 @@
 
 .buttonPrimary {
   composes: buttonBase;
-  background: linear-gradient(135deg, var(--brand-red), var(--brand-dark-red));
+  background: linear-gradient(135deg, var(--brand-purple), var(--brand-purple-dark));
   color: var(--text-on-brand);
   box-shadow: var(--shadow-brand);
 }

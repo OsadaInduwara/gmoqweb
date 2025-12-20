@@ -15,10 +15,9 @@ const Play = ({ className = "w-5 h-5" }: { className?: string }) => (
 );
 
 const stats = [
-  { number: '100+', label: 'Projects Completed' },
-  { number: '50+', label: 'Happy Clients' },
-  { number: '5+', label: 'Years Experience' },
-  { number: '99.9%', label: 'Uptime Guarantee' }
+  { number: '4+', label: 'Projects Completed' },
+  { number: '4+', label: 'Happy Clients' },
+  { number: '4+', label: 'Years Experience' }
 ];
 
 export const HeroSectionSimple = () => {
@@ -26,13 +25,12 @@ export const HeroSectionSimple = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  
+
   const texts = [
     'AI Solutions',
-    'Web Applications', 
+    'Web Applications',
     'Mobile Apps',
-    'Data Analytics',
-    'Cloud Services'
+    'Data Analytics'
   ];
 
   useEffect(() => {
@@ -41,7 +39,7 @@ export const HeroSectionSimple = () => {
 
   useEffect(() => {
     if (!isClient) return;
-    
+
     const typeSpeed = isDeleting ? 50 : 100;
     const currentText = texts[currentIndex];
 
@@ -52,7 +50,7 @@ export const HeroSectionSimple = () => {
         setIsDeleting(false);
         setCurrentIndex((prev) => (prev + 1) % texts.length);
       } else {
-        const nextText = isDeleting 
+        const nextText = isDeleting
           ? currentText.substring(0, typedText.length - 1)
           : currentText.substring(0, typedText.length + 1);
         setTypedText(nextText);
@@ -86,7 +84,7 @@ export const HeroSectionSimple = () => {
     <section id="home" className="hero">
       <div className="hero-container">
         <div className="hero-content">
-          
+
           {/* Main Title */}
           <h1 className="hero-title">
             Building Tomorrow&apos;s{' '}
@@ -98,8 +96,8 @@ export const HeroSectionSimple = () => {
 
           {/* Subtitle */}
           <p className="hero-subtitle">
-            Transform your business with cutting-edge technology solutions. 
-            We deliver custom software, AI applications, and digital experiences 
+            Transform your business with cutting-edge technology solutions.
+            We deliver custom software, AI applications, and digital experiences
             that drive measurable results for forward-thinking companies.
           </p>
 
@@ -109,7 +107,7 @@ export const HeroSectionSimple = () => {
               Get Started Today
               <ArrowRight className="w-5 h-5" />
             </button>
-            
+
             <button onClick={scrollToPortfolio} className="hero-button-secondary">
               <Play className="w-5 h-5" />
               Explore Our Work

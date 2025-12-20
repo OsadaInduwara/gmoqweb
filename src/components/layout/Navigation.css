@@ -44,7 +44,7 @@
   width: 40px;
   height: 40px;
   border-radius: 0.5rem;
-  background: linear-gradient(135deg, #c40044, #610125);
+  background: linear-gradient(135deg, #4C1D95, #3B0764);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@
 .navigation-logo-text {
   font-size: 1.25rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #c40044 0%, #610125 50%, #f7d93b 100%);
+  background: linear-gradient(135deg, #4C1D95 0%, #3B0764 50%, #F97316 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -95,7 +95,7 @@
 
 .navigation-link:hover,
 .navigation-link.active {
-  color: #c40044;
+  color: #4C1D95;
 }
 
 .navigation-link.active::after {
@@ -105,7 +105,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: #c40044;
+  background: #4C1D95;
 }
 
 .dark .navigation-link {
@@ -114,7 +114,7 @@
 
 .dark .navigation-link:hover,
 .dark .navigation-link.active {
-  color: #c40044;
+  color: #4C1D95;
 }
 
 .navigation-actions {
@@ -155,7 +155,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #c40044, #610125);
+  background: linear-gradient(135deg, #4C1D95, #3B0764);
   color: white;
   text-decoration: none;
   border-radius: 0.5rem;
@@ -166,7 +166,7 @@
 
 .navigation-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(196, 0, 68, 0.3);
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.4);
 }
 
 .navigation-mobile-toggle {
@@ -210,7 +210,7 @@
   .navigation-mobile-toggle {
     display: flex;
   }
-  
+
   .navigation-actions .navigation-cta {
     display: none;
   }
@@ -265,7 +265,7 @@
 
 .navigation-mobile-link:hover,
 .navigation-mobile-link.active {
-  color: #c40044;
+  color: #4C1D95;
 }
 
 .dark .navigation-mobile-link {

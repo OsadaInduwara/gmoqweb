@@ -71,8 +71,8 @@ export const Footer = () => {
             <h3 className="footer-section-title">Contact</h3>
             <div className="footer-links">
               <a href="mailto:hello@gmoqai.com" className="footer-link">hello@gmoqai.com</a>
-              <a href="tel:+15551234567" className="footer-link">+1 (555) 123-4567</a>
-              <span className="footer-link">123 Innovation Drive, Tech City</span>
+              <a href="tel:+94701433563" className="footer-link">+94 701433563</a>
+              <span className="footer-link">Colombo, Sri Lanka</span>
             </div>
           </div>
         </div>

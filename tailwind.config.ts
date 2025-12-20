@@ -10,13 +10,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand colors matching the CSS variables
-        'brand-red': '#c40044',
-        'brand-dark-red': '#610125',
-        'accent-yellow': '#f7d93b',
-        'accent-yellow-light': '#fef3c7',
-        'accent-yellow-dark': '#d69e2e',
-        
+        // Brand colors - Dark Purple primary, Deep Orange accent
+        'brand-purple': '#4C1D95',
+        'brand-purple-light': '#6B21A8',
+        'brand-purple-dark': '#3B0764',
+        'accent-orange': '#F97316',
+        'accent-orange-light': '#FB923C',
+        'accent-orange-dark': '#EA580C',
+
         // Theme-aware colors
         primary: {
           DEFAULT: 'var(--bg-primary)',
@@ -25,57 +26,45 @@ const config: Config = {
           500: 'var(--text-primary)',
           600: 'var(--text-secondary)',
           700: 'var(--text-muted)',
-          pink: {
-            50: '#fdf2f8',
-            100: '#fce7f3',
-            200: '#fbcfe8',
-            300: '#f9a8d4',
-            400: '#f472b6',
-            500: '#ec4899',
-            600: '#db2777',
-            700: '#be185d',
-            800: '#9d174d',
-            900: '#831843'
-          },
-          yellow: {
-            50: '#fffbeb',
-            100: '#fef3c7',
-            200: '#fde68a',
-            300: '#fcd34d',
-            400: '#fbbf24',
-            500: '#f59e0b',
-            600: '#d97706',
-            700: '#b45309',
-            800: '#92400e',
-            900: '#78350f'
-          },
           purple: {
-            50: '#f5f3ff',
-            100: '#ede9fe',
-            200: '#ddd6fe',
-            300: '#c4b5fd',
-            400: '#a78bfa',
-            500: '#8b5cf6',
-            600: '#7c3aed',
-            700: '#6d28d9',
-            800: '#5b21b6',
+            50: '#faf5ff',
+            100: '#f3e8ff',
+            200: '#e9d5ff',
+            300: '#d8b4fe',
+            400: '#c084fc',
+            500: '#a855f7',
+            600: '#9333ea',
+            700: '#7c3aed',
+            800: '#6b21a8',
             900: '#4c1d95'
+          },
+          orange: {
+            50: '#fff7ed',
+            100: '#ffedd5',
+            200: '#fed7aa',
+            300: '#fdba74',
+            400: '#fb923c',
+            500: '#f97316',
+            600: '#ea580c',
+            700: '#c2410c',
+            800: '#9a3412',
+            900: '#7c2d12'
           }
         },
         secondary: 'var(--text-secondary)',
         muted: 'var(--text-muted)',
         light: 'var(--border-light)',
         dark: {
-          primary: '#0d1117',
-          secondary: '#161b22',
-          tertiary: '#21262d',
+          primary: '#0d0a1a',
+          secondary: '#1a1428',
+          tertiary: '#251d36',
         },
         accent: {
-          cyan: '#06b6d4',
-          blue: '#3b82f6',
-          emerald: '#10b981',
-          orange: '#f97316',
-          rose: '#f43f5e'
+          purple: '#8B5CF6',
+          violet: '#A855F7',
+          lavender: '#C084FC',
+          orange: '#F97316',
+          gold: '#FBBF24'
         }
       },
       animation: {
@@ -172,10 +161,11 @@ const config: Config = {
         '4xl': '2rem'
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(255, 30, 124, 0.3)',
-        'glow-yellow': '0 0 20px rgba(255, 217, 61, 0.3)',
+        'glow': '0 0 20px rgba(139, 92, 246, 0.4)',
+        'glow-purple': '0 0 25px rgba(107, 33, 168, 0.35)',
+        'glow-orange': '0 0 20px rgba(249, 115, 22, 0.3)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+        'card-hover': '0 10px 15px -3px rgba(139, 92, 246, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
       }
     },
   },

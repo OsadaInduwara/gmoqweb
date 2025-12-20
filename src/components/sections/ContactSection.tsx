@@ -53,7 +53,7 @@ const contactInfo = [
     icon: MapPin,
     title: 'Visit Us',
     description: 'Come say hello at our office',
-    contact: 'Makola, Sri Lanka',
+    contact: 'Colombo, Sri Lanka',
     action: '#'
   },
   {
@@ -71,7 +71,6 @@ const projectTypes = [
   'Web Application',
   'Mobile App Development',
   'Data Analytics',
-  'Cloud & DevOps',
   'Consultation Only',
   'Other'
 ];
@@ -212,7 +211,7 @@ export const ContactSection = () => {
                 return (
                   <div key={index} className="card group cursor-pointer">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center text-white group-hover:shadow-lg transition-all duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-700 to-orange-500 flex items-center justify-center text-white group-hover:shadow-lg transition-all duration-300">
                         <Icon />
                       </div>
                       <div className="flex-1">
@@ -223,13 +222,13 @@ export const ContactSection = () => {
                           {info.description}
                         </p>
                         {info.action.startsWith('#') ? (
-                          <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                          <p className="text-sm font-medium text-purple-700 dark:text-purple-400">
                             {info.contact}
                           </p>
                         ) : (
                           <a 
                             href={info.action}
-                            className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
+                            className="text-sm font-medium text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors duration-200"
                           >
                             {info.contact}
                           </a>
@@ -294,9 +293,9 @@ export const ContactSection = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="John Doe"
+                      
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -308,9 +307,9 @@ export const ContactSection = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="john@company.com"
+                      
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -326,7 +325,7 @@ export const ContactSection = () => {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Your Company"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -339,7 +338,7 @@ export const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="+1 (555) 123-4567"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -354,7 +353,7 @@ export const ContactSection = () => {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                      className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                       required
                     >
                       <option value="">Select project type</option>
@@ -371,7 +370,7 @@ export const ContactSection = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                      className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     >
                       <option value="">Select budget range</option>
                       {budgetRanges.map((range) => (
@@ -391,7 +390,7 @@ export const ContactSection = () => {
                     value={formData.timeline}
                     onChange={handleInputChange}
                     placeholder="When do you need this completed?"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                   />
                 </div>
 
@@ -405,7 +404,7 @@ export const ContactSection = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     placeholder="Tell us about your project, goals, and any specific requirements..."
                     required
                   />

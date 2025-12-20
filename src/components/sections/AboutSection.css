@@ -31,7 +31,7 @@
   transform: translateX(-50%);
   width: min(80%, 600px);
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(196, 0, 68, 0.3) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(76, 29, 149, 0.3) 50%, transparent 100%);
 }
 
 .about-container {
@@ -109,8 +109,8 @@
 
 .about-mission-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(196, 0, 68, 0.1);
-  border-color: rgba(196, 0, 68, 0.2);
+  box-shadow: 0 12px 32px rgba(76, 29, 149, 0.1);
+  border-color: rgba(76, 29, 149, 0.2);
 }
 
 .dark .about-mission-card {
@@ -121,7 +121,7 @@
 
 .dark .about-mission-card:hover {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-  border-color: rgba(196, 0, 68, 0.3);
+  border-color: rgba(76, 29, 149, 0.3);
 }
 
 .about-section-title {
@@ -172,7 +172,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #c40044, #610125);
+  background: linear-gradient(135deg, #4C1D95, #6B21A8);
   color: white;
   text-decoration: none;
   border: none;
@@ -185,7 +185,7 @@
 
 .about-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(196, 0, 68, 0.3);
+  box-shadow: 0 8px 15px rgba(76, 29, 149, 0.3);
 }
 
 .about-title {
@@ -247,7 +247,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #c40044, #f7d93b);
+  background: linear-gradient(90deg, #4C1D95, #F97316);
   transform: translateX(-100%);
   transition: transform 0.4s ease;
 }
@@ -258,8 +258,8 @@
 
 .about-stat:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(196, 0, 68, 0.15);
-  border-color: rgba(196, 0, 68, 0.2);
+  box-shadow: 0 12px 28px rgba(76, 29, 149, 0.15);
+  border-color: rgba(76, 29, 149, 0.2);
 }
 
 .dark .about-stat {
@@ -270,20 +270,20 @@
 
 .dark .about-stat:hover {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
-  border-color: rgba(196, 0, 68, 0.3);
+  border-color: rgba(76, 29, 149, 0.3);
 }
 
 .about-stat-icon {
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
-  color: #c40044;
+  color: #4C1D95;
 }
 
 .about-stat-number {
   font-size: 2.25rem;
   font-weight: 700;
-  color: #c40044;
+  color: #4C1D95;
   display: block;
   margin-bottom: 0.5rem;
   line-height: 1;
@@ -314,7 +314,7 @@
 
 .about-team-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(196, 0, 68, 0.1);
+  box-shadow: 0 12px 32px rgba(76, 29, 149, 0.1);
 }
 
 .dark .about-team-card {
@@ -334,7 +334,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #c40044, #610125);
+  background: linear-gradient(135deg, #4C1D95, #6B21A8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,7 +385,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #c40044, #610125);
+  background: linear-gradient(135deg, #4C1D95, #6B21A8);
   color: white;
   text-decoration: none;
   border-radius: 0.75rem;
@@ -436,7 +436,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #c40044, #f7d93b);
+  background: linear-gradient(90deg, #4C1D95, #F97316);
   transform: translateX(-100%);
   transition: transform 0.4s ease;
 }
@@ -449,8 +449,8 @@
 .about-value-card:hover,
 .about-value-card.active {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(196, 0, 68, 0.15);
-  border-color: rgba(196, 0, 68, 0.2);
+  box-shadow: 0 12px 32px rgba(76, 29, 149, 0.15);
+  border-color: rgba(76, 29, 149, 0.2);
 }
 
 .dark .about-value-card {
@@ -461,7 +461,7 @@
 .dark .about-value-card:hover,
 .dark .about-value-card.active {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-  border-color: rgba(196, 0, 68, 0.3);
+  border-color: rgba(76, 29, 149, 0.3);
 }
 
 .about-value-icon {
@@ -530,9 +530,9 @@
 
 .about-trust-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(196, 0, 68, 0.1);
-  border-color: rgba(196, 0, 68, 0.2);
-  color: #c40044;
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.1);
+  border-color: rgba(76, 29, 149, 0.2);
+  color: #4C1D95;
 }
 
 .dark .about-trust-badge {
@@ -543,8 +543,8 @@
 
 .dark .about-trust-badge:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-color: rgba(196, 0, 68, 0.3);
-  color: #c40044;
+  border-color: rgba(76, 29, 149, 0.3);
+  color: #4C1D95;
 }
 
 /* Responsive Design Enhancements */
@@ -683,6 +683,6 @@
 .about-button:focus,
 .about-value-card:focus,
 .about-trust-badge:focus {
-  outline: 2px solid #c40044;
+  outline: 2px solid #4C1D95;
   outline-offset: 2px;
 }

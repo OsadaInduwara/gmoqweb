@@ -9,7 +9,7 @@
   - Micro-interactions for engagement
   - F-Pattern layout for optimal readability
   - Card-based design system
-  - Consistent brand colors: #c40044, #610125, #f7d93b
+  - Consistent brand colors: #4C1D95, #6B21A8, #F97316
 */
 
 /* Portfolio Section Foundation */
@@ -114,7 +114,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #c40044, #610125, #f7d93b);
+  background: linear-gradient(90deg, #4C1D95, #6B21A8, #F97316);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -127,13 +127,13 @@
 
 .group.relative.card.overflow-hidden:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(196, 0, 68, 0.15);
-  border-color: rgba(196, 0, 68, 0.3);
+  box-shadow: 0 20px 40px rgba(76, 29, 149, 0.15);
+  border-color: rgba(76, 29, 149, 0.3);
 }
 
 .dark .group.relative.card.overflow-hidden:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(196, 0, 68, 0.4);
+  border-color: rgba(76, 29, 149, 0.4);
 }
 
 /* Project Image Container */
@@ -167,14 +167,14 @@
 /* Project Number Badge - Resized fonts */
 .w-16.h-16.bg-blue-600,
 .w-12.h-12.bg-blue-600 {
-  background: linear-gradient(135deg, #c40044, #610125);
+  background: linear-gradient(135deg, #4C1D95, #6B21A8);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0.75rem;
   color: white;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(196, 0, 68, 0.3);
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
 }
 
 .w-16.h-16.bg-blue-600 {
@@ -187,7 +187,7 @@
 
 .dark .w-16.h-16.bg-blue-600,
 .dark .w-12.h-12.bg-blue-600 {
-  background: linear-gradient(135deg, #c40044, #610125);
+  background: linear-gradient(135deg, #4C1D95, #6B21A8);
 }
 
 /* Status Badge Positioning */
@@ -435,7 +435,7 @@
   left: -100%;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, #c40044, #610125);
+  background: linear-gradient(90deg, #4C1D95, #6B21A8);
   transition: left 0.3s ease;
   z-index: -1;
 }
@@ -446,9 +446,9 @@
 
 .btn-secondary:hover {
   color: white;
-  border-color: #c40044;
+  border-color: #4C1D95;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(196, 0, 68, 0.3);
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
 }
 
 .dark .btn-secondary {
@@ -465,7 +465,7 @@
 
 .group.card.cursor-pointer.transform.hover\\:scale-105:hover {
   transform: scale(1.02) translateY(-4px);
-  box-shadow: 0 12px 28px rgba(196, 0, 68, 0.15);
+  box-shadow: 0 12px 28px rgba(76, 29, 149, 0.15);
 }
 
 .dark .group.card.cursor-pointer.transform.hover\\:scale-105:hover {
@@ -571,7 +571,7 @@
 .group.card.cursor-pointer:focus,
 .btn:focus,
 .badge:focus {
-  outline: 2px solid #c40044;
+  outline: 2px solid #4C1D95;
   outline-offset: 2px;
 }
 
@@ -600,7 +600,7 @@
   background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-dark-red) 100%);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(196, 0, 68, 0.2);
+  box-shadow: 0 8px 25px rgba(76, 29, 149, 0.2);
 }
 
 .project-metric-item:hover .project-metric-value,

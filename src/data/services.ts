@@ -110,27 +110,5 @@ export const servicesData: Service[] = [
     technologies: ['Python', 'R', 'Tableau', 'Power BI', 'Apache Spark', 'Elasticsearch'],
     gradient: 'from-orange-500 to-red-600',
     animation: 'float'
-  },
-  {
-    id: 'cloud-devops',
-    icon: 'Cloud',
-    title: 'Cloud & DevOps Services',
-    description: 'Scalable cloud infrastructure and streamlined deployment processes for optimal performance',
-    features: [
-      'Cloud Migration',
-      'Infrastructure as Code',
-      'CI/CD Pipelines',
-      'Container Orchestration',
-      'Monitoring & Alerting'
-    ],
-    benefits: [
-      'Reduced Operational Costs',
-      'Improved Scalability',
-      'Enhanced Security',
-      'Faster Deployments'
-    ],
-    technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'Terraform', 'Jenkins'],
-    gradient: 'from-cyan-500 to-blue-600',
-    animation: 'pulse'
   }
 ];

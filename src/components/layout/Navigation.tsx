@@ -24,11 +24,11 @@ const ThemeToggle = () => {
   useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem('theme');
-    
+
     // Check system preference if no saved theme
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const shouldBeDark = savedTheme ? savedTheme === 'dark' : prefersDark;
-    
+
     setIsDark(shouldBeDark);
     if (shouldBeDark) {
       document.documentElement.classList.add('dark');
@@ -40,7 +40,7 @@ const ThemeToggle = () => {
   const toggleTheme = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
-    
+
     if (newTheme) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -68,14 +68,14 @@ export const Navigation = () => {
 
   useEffect(() => {
     setMounted(true);
-    
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
     // Set initial scroll state
     setIsScrolled(window.scrollY > 20);
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -102,14 +102,14 @@ export const Navigation = () => {
   };
 
   // Prevent hydration mismatch by not applying scroll state until mounted
-  const navClassName = mounted 
+  const navClassName = mounted
     ? `navigation ${isScrolled ? 'scrolled' : ''}`
     : 'navigation';
 
   return (
     <nav className={navClassName}>
       <div className="navigation-container">
-        
+
         {/* Logo */}
         <Link href="/" className="navigation-logo">
           <div className="navigation-logo-icon">G</div>
@@ -120,48 +120,40 @@ export const Navigation = () => {
         <div className="navigation-menu">
           <ul className="navigation-links">
             <li>
-              <button 
-                onClick={() => scrollToSection('home')} 
+              <button
+                onClick={() => scrollToSection('home')}
                 className="navigation-link"
               >
                 Home
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('services')} 
+              <button
+                onClick={() => scrollToSection('services')}
                 className="navigation-link"
               >
                 Services
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('portfolio')} 
+              <button
+                onClick={() => scrollToSection('portfolio')}
                 className="navigation-link"
               >
                 Portfolio
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('about')} 
+              <button
+                onClick={() => scrollToSection('about')}
                 className="navigation-link"
               >
                 About
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => scrollToSection('testimonials')} 
-                className="navigation-link"
-              >
-                Testimonials
-              </button>
-            </li>
-            <li>
-              <button 
-                onClick={() => scrollToSection('contact')} 
+              <button
+                onClick={() => scrollToSection('contact')}
                 className="navigation-link"
               >
                 Contact
@@ -173,8 +165,8 @@ export const Navigation = () => {
         {/* Actions */}
         <div className="navigation-actions">
           <ThemeToggle />
-          <button 
-            onClick={() => scrollToSection('contact')} 
+          <button
+            onClick={() => scrollToSection('contact')}
             className="navigation-cta"
           >
             Get Started
@@ -182,7 +174,7 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className={`navigation-mobile-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
@@ -197,58 +189,50 @@ export const Navigation = () => {
       <div className={`navigation-mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <ul className="navigation-mobile-links">
           <li>
-            <button 
-              onClick={() => scrollToSection('home')} 
+            <button
+              onClick={() => scrollToSection('home')}
               className="navigation-mobile-link"
             >
               Home
             </button>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('services')} 
+            <button
+              onClick={() => scrollToSection('services')}
               className="navigation-mobile-link"
             >
               Services
             </button>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('portfolio')} 
+            <button
+              onClick={() => scrollToSection('portfolio')}
               className="navigation-mobile-link"
             >
               Portfolio
             </button>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('about')} 
+            <button
+              onClick={() => scrollToSection('about')}
               className="navigation-mobile-link"
             >
               About
             </button>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('testimonials')} 
-              className="navigation-mobile-link"
-            >
-              Testimonials
-            </button>
-          </li>
-          <li>
-            <button 
-              onClick={() => scrollToSection('contact')} 
+            <button
+              onClick={() => scrollToSection('contact')}
               className="navigation-mobile-link"
             >
               Contact
             </button>
           </li>
         </ul>
-        
+
         <div className="navigation-mobile-cta">
-          <button 
-            onClick={() => scrollToSection('contact')} 
+          <button
+            onClick={() => scrollToSection('contact')}
             className="navigation-cta"
           >
             Get Started

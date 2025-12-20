@@ -36,10 +36,10 @@ const Target = ({ className = "w-6 h-6" }: { className?: string }) => (
 
 // Company metrics with animated counters
 const metrics = [
-  { id: 1, value: 100, suffix: '+', label: 'Projects Delivered', icon: Target },
-  { id: 2, value: 50, suffix: '+', label: 'Happy Clients', icon: Users },
-  { id: 3, value: 5, suffix: '+', label: 'Years Experience', icon: TrendingUp },
-  { id: 4, value: 15, suffix: '+', label: 'Team Members', icon: Award }
+  { id: 1, value: 4, suffix: '+', label: 'Projects Delivered', icon: Target },
+  { id: 2, value: 4, suffix: '+', label: 'Happy Clients', icon: Users },
+  { id: 3, value: 4, suffix: '+', label: 'Years Experience', icon: TrendingUp },
+  { id: 4, value: 2, suffix: '', label: 'Team Members', icon: Award }
 ];
 
 // Core values following atomic design principles
@@ -97,14 +97,14 @@ const useAnimatedCounter = (end: number, duration: number = 2000) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const percentage = Math.min(progress / duration, 1);
-      
+
       setCount(Math.floor(end * percentage));
-      
+
       if (percentage < 1) {
         requestAnimationFrame(animate);
       }
     };
-    
+
     requestAnimationFrame(animate);
   }, [isVisible, end, duration]);
 
@@ -135,63 +135,38 @@ export const AboutSection = () => {
   return (
     <section id="about" className="about">
       <div className="about-container">
-        
+
         {/* Section Header with F-Pattern Layout */}
         <div className="about-header">
           <h2 className="about-title">
-            About <span style={{ color: '#c40044' }}>GmoqAI</span> Technologies
+            About <span style={{ color: '#4C1D95' }}>GmoqAI</span> Technologies
           </h2>
           <p className="about-subtitle">
-            We're a forward-thinking technology company dedicated to transforming businesses 
+            We're a forward-thinking technology company dedicated to transforming businesses
             through innovative AI solutions and custom software development.
           </p>
         </div>
 
         {/* Main Content Grid - Following 8pt Grid System */}
         <div className="about-content">
-          
+
           {/* Left Column - Story & Mission */}
           <div className="about-text">
-            
+
             {/* Mission Statement */}
             <div className="about-mission-card">
               <h3 className="about-section-title">Our Mission</h3>
               <p className="about-mission-text">
-                To democratize artificial intelligence and make cutting-edge technology 
-                accessible to businesses of all sizes, empowering them to innovate, 
+                To democratize artificial intelligence and make cutting-edge technology
+                accessible to businesses of all sizes, empowering them to innovate,
                 grow, and succeed in the digital age.
               </p>
-            </div>
-
-            {/* Company Story */}
-            <div className="about-story">
-              <h3 className="about-section-title">Our Story</h3>
-              <p className="about-description">
-                Founded in 2019 by a team of passionate engineers and AI researchers, 
-                GmoqAI Technologies emerged from a simple yet powerful vision: to bridge 
-                the gap between complex AI technology and practical business solutions.
-              </p>
-              <p className="about-description">
-                What started as a small consulting firm has evolved into a comprehensive 
-                technology partner, serving clients from startups to Fortune 500 companies. 
-                Our unique approach combines technical excellence with deep business understanding.
-              </p>
-            </div>
-
-            {/* Call to Action */}
-            <div className="about-cta">
-              <button className="about-button">
-                <span>Learn More About Us</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
           </div>
 
           {/* Right Column - Visual Content */}
           <div className="about-visual">
-            
+
             {/* Metrics Grid */}
             <div className="about-stats">
               {metrics.map((metric) => (
@@ -204,9 +179,9 @@ export const AboutSection = () => {
               <h3 className="about-section-title">Meet Our Leadership</h3>
               <div className="about-ceo-card">
                 <div className="about-ceo-avatar">
-                  <Image 
-                    src="/ceo-photo.png" 
-                    alt="Osada Induwara" 
+                  <Image
+                    src="/ceo-photo.png"
+                    alt="Osada Induwara"
                     width={60}
                     height={60}
                   />
@@ -215,7 +190,7 @@ export const AboutSection = () => {
                   <h4>Osada Induwara</h4>
                   <p>CEO & Founder</p>
                   <p className="about-ceo-description">
-                    &quot;Our success is measured by the impact we create for our clients. 
+                    &quot;Our success is measured by the impact we create for our clients.
                     Every project is an opportunity to push boundaries and deliver excellence.&quot;
                   </p>
                 </div>
@@ -229,7 +204,7 @@ export const AboutSection = () => {
           <h3 className="about-values-title">Our Core Values</h3>
           <div className="about-values-grid">
             {coreValues.map((value, index) => (
-              <div 
+              <div
                 key={index}
                 className={`about-value-card ${activeValue === index ? 'active' : ''}`}
                 onMouseEnter={() => setActiveValue(index)}
