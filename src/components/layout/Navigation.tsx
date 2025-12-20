@@ -112,8 +112,8 @@ export const Navigation = () => {
 
         {/* Logo */}
         <Link href="/" className="navigation-logo">
-          <div className="navigation-logo-icon">G</div>
-          <span className="navigation-logo-text">GmoqAI Technologies</span>
+          <img src="/images/logo.png" alt="GmoqAI" className="navigation-logo-icon" style={{ background: 'transparent', borderRadius: '8px', width: '70px', height: '70px' }} />
+          <span className="navigation-logo-text" style={{ fontSize: '2rem', fontWeight: '700' }}>GmoqAI</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -164,7 +164,6 @@ export const Navigation = () => {
 
         {/* Actions */}
         <div className="navigation-actions">
-          <ThemeToggle />
           <button
             onClick={() => scrollToSection('contact')}
             className="navigation-cta"

@@ -180,7 +180,7 @@ export const AboutSection = () => {
               <div className="about-ceo-card">
                 <div className="about-ceo-avatar">
                   <Image
-                    src="/ceo-photo.png"
+                    src="/images/me.png"
                     alt="Osada Induwara"
                     width={60}
                     height={60}

@@ -86,26 +86,27 @@
 .navigation-link {
   color: #52525b;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.875rem;
-  padding: 0.5rem 0;
-  transition: color 0.2s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
   position: relative;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .navigation-link:hover,
 .navigation-link.active {
-  color: #4C1D95;
+  background: linear-gradient(135deg, #4C1D95, #F97316);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
 }
 
 .navigation-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #4C1D95;
+  display: none;
 }
 
 .dark .navigation-link {
@@ -114,7 +115,8 @@
 
 .dark .navigation-link:hover,
 .dark .navigation-link.active {
-  color: #4C1D95;
+  background: linear-gradient(135deg, #4C1D95, #F97316);
+  color: white;
 }
 
 .navigation-actions {

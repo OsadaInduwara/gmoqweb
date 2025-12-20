@@ -118,10 +118,10 @@ export const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       console.log('Submitting form directly to Formspree...');
-      
+
       // Submit directly to Formspree (forwards to your Gmail)
       const response = await fetch('https://formspree.io/f/xanyrnok', {
         method: 'POST',
@@ -144,7 +144,7 @@ export const ContactSection = () => {
       });
 
       console.log('Formspree response status:', response.status);
-      
+
       if (response.ok) {
         console.log('Form submitted successfully!');
         setSubmitStatus('success');
@@ -179,13 +179,13 @@ export const ContactSection = () => {
           <div className="section-divider-icon">
             <span className="section-divider-text">Let&apos;s Talk</span>
           </div>
-          
+
           <h2 className="text-primary mb-large">
             Let&apos;s Start Your Next Project
           </h2>
-          
+
           <p className="text-xl text-secondary max-w-3xl mx-auto">
-            Ready to transform your business with cutting-edge technology? 
+            Ready to transform your business with cutting-edge technology?
             We'd love to hear about your project and discuss how we can help.
           </p>
         </div>
@@ -198,8 +198,8 @@ export const ContactSection = () => {
                 Get in Touch
               </h3>
               <p className="text-secondary mb-large leading-relaxed">
-                Whether you have a specific project in mind or just want to explore possibilities, 
-                we&apos;re here to help. Reach out to us through any of the channels below, and let&apos;s 
+                Whether you have a specific project in mind or just want to explore possibilities,
+                we&apos;re here to help. Reach out to us through any of the channels below, and let&apos;s
                 start a conversation about your next big idea.
               </p>
             </div>
@@ -226,7 +226,7 @@ export const ContactSection = () => {
                             {info.contact}
                           </p>
                         ) : (
-                          <a 
+                          <a
                             href={info.action}
                             className="text-sm font-medium text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors duration-200"
                           >
@@ -238,27 +238,6 @@ export const ContactSection = () => {
                   </div>
                 );
               })}
-            </div>
-
-            {/* FAQ Quick Links */}
-            <div className="card">
-              <h4 className="font-semibold text-primary mb-medium">
-                Frequently Asked Questions
-              </h4>
-              <div className="space-y-3">
-                <div className="text-sm text-secondary">
-                  <span className="font-medium">Project Timeline:</span> Most projects take 2-6 months depending on complexity.
-                </div>
-                <div className="text-sm text-secondary">
-                  <span className="font-medium">Development Process:</span> We follow agile methodology with weekly updates.
-                </div>
-                <div className="text-sm text-secondary">
-                  <span className="font-medium">Post-Launch Support:</span> 3 months free support, then ongoing maintenance plans.
-                </div>
-                <div className="text-sm text-secondary">
-                  <span className="font-medium">Consultation:</span> Free initial consultation and project estimation.
-                </div>
-              </div>
             </div>
           </div>
 
@@ -293,7 +272,7 @@ export const ContactSection = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      
+
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
@@ -307,7 +286,7 @@ export const ContactSection = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      
+
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
