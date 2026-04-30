@@ -2,82 +2,65 @@
 
 import { useState, useEffect } from 'react';
 
-const ArrowRight = ({ className = "w-5 h-5" }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+const ArrowRight = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
   </svg>
 );
 
-const Play = ({ className = "w-5 h-5" }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1m5-8a9 9 0 11-18 0 9 9 0 0118 0z" />
+const PlayIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
   </svg>
 );
 
 const stats = [
-  { number: '4+', label: 'Projects Completed' },
-  { number: '4+', label: 'Happy Clients' },
-  { number: '4+', label: 'Years Experience' }
+  { number: '20+', label: 'Projects Completed' },
+  { number: '15+', label: 'Happy Clients' },
+  { number: '4+',  label: 'Years Experience' },
+];
+
+const texts = [
+  'AI Solutions',
+  'Web Applications',
+  'Mobile Apps',
+  'Data Analytics',
 ];
 
 export const HeroSectionSimple = () => {
-  const [typedText, setTypedText] = useState('AI Solutions');
+  const [typedText, setTypedText]     = useState(texts[0]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const [isDeleting, setIsDeleting]   = useState(false);
+  const [isClient, setIsClient]       = useState(false);
 
-  const texts = [
-    'AI Solutions',
-    'Web Applications',
-    'Mobile Apps',
-    'Data Analytics'
-  ];
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  useEffect(() => { setIsClient(true); }, []);
 
   useEffect(() => {
     if (!isClient) return;
 
-    const typeSpeed = isDeleting ? 50 : 100;
+    const typeSpeed  = isDeleting ? 50 : 100;
     const currentText = texts[currentIndex];
 
     const timer = setTimeout(() => {
       if (!isDeleting && typedText === currentText) {
-        setTimeout(() => setIsDeleting(true), 2000);
+        setTimeout(() => setIsDeleting(true), 2200);
       } else if (isDeleting && typedText === '') {
         setIsDeleting(false);
         setCurrentIndex((prev) => (prev + 1) % texts.length);
       } else {
-        const nextText = isDeleting
+        const next = isDeleting
           ? currentText.substring(0, typedText.length - 1)
           : currentText.substring(0, typedText.length + 1);
-        setTypedText(nextText);
+        setTypedText(next);
       }
     }, typeSpeed);
 
     return () => clearTimeout(timer);
-  }, [typedText, currentIndex, isDeleting, texts, isClient]);
+  }, [typedText, currentIndex, isDeleting, isClient]);
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
-
-  const scrollToPortfolio = () => {
-    const element = document.getElementById('portfolio');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -85,39 +68,43 @@ export const HeroSectionSimple = () => {
       <div className="hero-container">
         <div className="hero-content">
 
-          {/* Main Title */}
+          {/* Badge */}
+          <div className="hero-badge">
+            <span className="hero-badge-dot"></span>
+            AI-Powered Technology Company
+          </div>
+
+          {/* Title */}
           <h1 className="hero-title">
             Building Tomorrow&apos;s{' '}
             <span className="hero-animated-text">
               {typedText}
-              {isClient && <span className="hero-cursor">|</span>}
             </span>
+            {isClient && <span className="hero-cursor" aria-hidden="true"></span>}
           </h1>
 
           {/* Subtitle */}
           <p className="hero-subtitle">
-            Transform your business with cutting-edge technology solutions.
-            We deliver custom software, AI applications, and digital experiences
-            that drive measurable results for forward-thinking companies.
+            GyrixAI delivers custom software, intelligent AI applications, and
+            digital experiences that drive measurable results for forward-thinking businesses.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTAs */}
           <div className="hero-buttons">
-            <button onClick={scrollToContact} className="hero-button-primary">
-              Get Started Today
-              <ArrowRight className="w-5 h-5" />
+            <button onClick={() => scrollTo('contact')} className="hero-button-primary" id="hero-cta-primary">
+              Start Your Project
+              <ArrowRight />
             </button>
-
-            <button onClick={scrollToPortfolio} className="hero-button-secondary">
-              <Play className="w-5 h-5" />
+            <button onClick={() => scrollTo('portfolio')} className="hero-button-secondary" id="hero-cta-secondary">
+              <PlayIcon />
               Explore Our Work
             </button>
           </div>
 
           {/* Stats */}
           <div className="hero-stats">
-            {stats.map((stat, index) => (
-              <div key={index} className="hero-stat">
+            {stats.map((stat, i) => (
+              <div key={i} className="hero-stat">
                 <span className="hero-stat-number">{stat.number}</span>
                 <span className="hero-stat-label">{stat.label}</span>
               </div>
@@ -125,6 +112,12 @@ export const HeroSectionSimple = () => {
           </div>
 
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="hero-scroll-indicator" aria-hidden="true">
+        <div className="hero-scroll-line"></div>
+        <span>Scroll</span>
       </div>
     </section>
   );

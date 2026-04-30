@@ -138,12 +138,13 @@ export const AboutSection = () => {
 
         {/* Section Header with F-Pattern Layout */}
         <div className="about-header">
+          <div className="section-label">About Us</div>
           <h2 className="about-title">
-            About <span style={{ color: '#4C1D95' }}>GmoqAI</span> Technologies
+            About <span className="text-gradient-brand">GyrixAI</span>
           </h2>
           <p className="about-subtitle">
-            We're a forward-thinking technology company dedicated to transforming businesses
-            through innovative AI solutions and custom software development.
+            We're a forward-thinking AI company dedicated to transforming businesses
+            through cutting-edge technology, intelligent automation, and custom software.
           </p>
         </div>
 
@@ -176,19 +177,20 @@ export const AboutSection = () => {
 
             {/* Team Highlight */}
             <div className="about-team-card">
-              <h3 className="about-section-title">Meet Our Leadership</h3>
+              <h3 className="about-section-title">Meet Our Founder</h3>
               <div className="about-ceo-card">
                 <div className="about-ceo-avatar">
                   <Image
                     src="/images/me.png"
-                    alt="Osada Induwara"
-                    width={60}
-                    height={60}
+                    alt="Osada Induwara — CEO & Founder of GyrixAI"
+                    width={72}
+                    height={72}
+                    style={{ objectFit: 'cover', objectPosition: 'top center', width: '72px', height: '72px' }}
                   />
                 </div>
                 <div className="about-ceo-info">
                   <h4>Osada Induwara</h4>
-                  <p>CEO & Founder</p>
+                  <p>CEO &amp; Founder</p>
                   <p className="about-ceo-description">
                     &quot;Our success is measured by the impact we create for our clients.
                     Every project is an opportunity to push boundaries and deliver excellence.&quot;

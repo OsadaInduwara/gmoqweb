@@ -15,13 +15,13 @@
 /* Portfolio Section Foundation */
 .portfolio {
   padding: clamp(4rem, 8vw, 8rem) 0;
-  background: linear-gradient(135deg, #fafafa 0%, #f8f9fa 50%, #ffffff 100%);
+  background: var(--bg-primary, #ffffff);
   position: relative;
   overflow: hidden;
 }
 
 .dark .portfolio {
-  background: linear-gradient(135deg, #0f0f23 0%, #18181b 50%, #1f1f23 100%);
+  background: var(--bg-primary, #080f1e);
 }
 
 .portfolio-container {
@@ -114,7 +114,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #4C1D95, #6B21A8, #F97316);
+  background: linear-gradient(135deg, #1B4285, #2563EB);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -127,8 +127,8 @@
 
 .group.relative.card.overflow-hidden:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(76, 29, 149, 0.15);
-  border-color: rgba(76, 29, 149, 0.3);
+  box-shadow: 0 20px 40px rgba(27, 66, 133, 0.15);
+  border-color: rgba(37, 99, 235, 0.25);
 }
 
 .dark .group.relative.card.overflow-hidden:hover {
@@ -571,7 +571,7 @@
 .group.card.cursor-pointer:focus,
 .btn:focus,
 .badge:focus {
-  outline: 2px solid #4C1D95;
+  border-color: rgba(37, 99, 235, 0.25);
   outline-offset: 2px;
 }
 

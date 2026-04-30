@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,40 +7,27 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const poppins = Poppins({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
 });
 
 export const metadata: Metadata = {
-  title: "GmoqAI Technologies | AI-Powered Software Solutions",
-  description: "Building tomorrow's digital solutions today with cutting-edge AI and custom software development",
-  keywords: ["AI", "Machine Learning", "Software Development", "Web Development", "Mobile Apps"],
+  title: "GyrixAI | AI-Powered Software Solutions",
+  description: "GyrixAI builds cutting-edge AI solutions, custom software, and intelligent digital products that drive measurable results for forward-thinking businesses.",
+  keywords: ["GyrixAI", "AI", "Machine Learning", "Software Development", "Web Development", "Mobile Apps", "Data Analytics"],
   icons: {
     icon: [
       {
-        url: '/logo.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: '/logo.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-    ],
-    shortcut: [
-      {
-        url: '/logo.png',
-        type: 'image/png',
+        url: '/images/logo.jpeg',
+        type: 'image/jpeg',
       },
     ],
     apple: [
       {
-        url: '/logo.png',
-        sizes: '180x180',
-        type: 'image/png',
+        url: '/images/logo.jpeg',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -53,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${inter.variable} ${poppins.variable} antialiased`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} antialiased`}>
         {children}
       </body>
     </html>
