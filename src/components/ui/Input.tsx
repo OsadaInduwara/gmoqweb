@@ -21,9 +21,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     ...props 
   }, ref) => {
     const variants = {
-      default: 'bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:ring-primary-pink-500 focus:border-primary-pink-500',
-      filled: 'bg-gray-50 dark:bg-gray-900 border border-transparent focus:ring-primary-pink-500 focus:border-primary-pink-500 focus:bg-white dark:focus:bg-gray-800',
-      ghost: 'bg-transparent border-b-2 border-gray-300 dark:border-gray-600 rounded-none focus:ring-0 focus:border-primary-pink-500'
+      default: 'bg-white border border-gray-300 focus:ring-primary-pink-500 focus:border-primary-pink-500',
+      filled: 'bg-gray-50 border border-transparent focus:ring-primary-pink-500 focus:border-primary-pink-500 focus:bg-white',
+      ghost: 'bg-transparent border-b-2 border-gray-300 rounded-none focus:ring-0 focus:border-primary-pink-500'
     };
 
     const sizes = {
@@ -39,7 +39,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-sm font-medium text-gray-700 mb-2"
           >
             {label}
           </label>

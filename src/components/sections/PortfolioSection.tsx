@@ -125,9 +125,9 @@ const categories = ['All', 'Web Application', 'Mobile App', 'AI Tool', 'Healthca
 type StatusKey = 'Live' | 'Beta' | 'Development';
 
 const statusColors: Record<StatusKey, string> = {
-  'Live': 'bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400',
-  'Beta': 'bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400',
-  'Development': 'bg-orange-100 text-orange-700 dark:bg-orange-900/20 dark:text-orange-400'
+  'Live': 'bg-green-100 text-green-700',
+  'Beta': 'bg-blue-100 text-blue-700',
+  'Development': 'bg-orange-100 text-orange-700'
 };
 
 export const PortfolioSection = () => {
@@ -175,9 +175,9 @@ export const PortfolioSection = () => {
                 onMouseLeave={() => setHoveredProject(null)}
               >
                 {/* Project Image */}
-                <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg mb-6 relative overflow-hidden">
+                <div className="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg mb-6 relative overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-blue-600 dark:bg-blue-500 rounded-xl flex items-center justify-center text-white text-2xl font-bold">
+                    <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-white text-2xl font-bold">
                       {index + 1}
                     </div>
                   </div>
@@ -278,9 +278,9 @@ export const PortfolioSection = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image */}
-              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-700 dark:to-slate-600 rounded-lg mb-4 relative overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-4 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-lg flex items-center justify-center text-white text-lg font-bold">
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-lg font-bold">
                     {project.id}
                   </div>
                 </div>
@@ -308,7 +308,7 @@ export const PortfolioSection = () => {
               {/* Project Details */}
               <div className="space-y-3">
                 <div className="flex items-start justify-between">
-                  <h4 className="font-semibold text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h4 className="font-semibold text-primary group-hover:text-blue-600 transition-colors">
                     {project.title}
                   </h4>
                 </div>

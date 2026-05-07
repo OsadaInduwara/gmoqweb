@@ -20,9 +20,7 @@
   overflow: hidden;
 }
 
-.dark .portfolio {
-  background: var(--bg-primary, #080f1e);
-}
+
 
 .portfolio-container {
   max-width: 1200px;
@@ -60,13 +58,9 @@
   color: #15803d;
 }
 
-.dark .bg-green-900\/20 {
-  background-color: rgba(20, 83, 45, 0.2);
-}
 
-.dark .text-green-400 {
-  color: #4ade80;
-}
+
+
 
 .bg-blue-100 {
   background-color: #dbeafe;
@@ -76,13 +70,9 @@
   color: #1d4ed8;
 }
 
-.dark .bg-blue-900\/20 {
-  background-color: rgba(30, 58, 138, 0.2);
-}
 
-.dark .text-blue-400 {
-  color: #60a5fa;
-}
+
+
 
 .bg-orange-100 {
   background-color: #fed7aa;
@@ -92,13 +82,9 @@
   color: #c2410c;
 }
 
-.dark .bg-orange-900\/20 {
-  background-color: rgba(154, 52, 18, 0.2);
-}
 
-.dark .text-orange-400 {
-  color: #fb923c;
-}
+
+
 
 /* Card Enhancements for Portfolio */
 .group.relative.card.overflow-hidden {
@@ -131,10 +117,7 @@
   border-color: rgba(37, 99, 235, 0.25);
 }
 
-.dark .group.relative.card.overflow-hidden:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(76, 29, 149, 0.4);
-}
+
 
 /* Project Image Container */
 .aspect-video {
@@ -148,13 +131,9 @@
   background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
 }
 
-.dark .aspect-video.bg-gradient-to-br.from-blue-100 {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-}
 
-.dark .aspect-video.bg-gradient-to-br.from-gray-100 {
-  background: linear-gradient(135deg, rgba(71, 85, 105, 0.4), rgba(51, 65, 85, 0.4));
-}
+
+
 
 .aspect-video .absolute.inset-0.flex.items-center.justify-center {
   position: absolute;
@@ -185,10 +164,7 @@
   font-size: 0.95rem;
 }
 
-.dark .w-16.h-16.bg-blue-600,
-.dark .w-12.h-12.bg-blue-600 {
-  background: linear-gradient(135deg, #4C1D95, #6B21A8);
-}
+
 
 /* Status Badge Positioning */
 .absolute.top-4.right-4,
@@ -338,9 +314,7 @@
   border-color: rgba(228, 228, 231, 0.4);
 }
 
-.dark .border-light {
-  border-color: rgba(82, 82, 91, 0.4);
-}
+
 
 /* Typography for Metrics - Resized for better proportion */
 .text-lg {
@@ -413,11 +387,7 @@
   color: #52525b;
 }
 
-.dark .badge:not(.badge-primary) {
-  background: rgba(63, 63, 70, 0.8);
-  border-color: rgba(82, 82, 91, 0.5);
-  color: #d4d4d8;
-}
+
 
 /* Button System Enhancement */
 .btn-secondary {
@@ -451,11 +421,7 @@
   box-shadow: 0 4px 12px rgba(76, 29, 149, 0.3);
 }
 
-.dark .btn-secondary {
-  background: rgba(63, 63, 70, 0.9);
-  border-color: rgba(82, 82, 91, 0.5);
-  color: #e5e7eb;
-}
+
 
 /* Transform and Transition Utilities */
 .group.card.cursor-pointer.transform.hover\\:scale-105 {
@@ -468,9 +434,7 @@
   box-shadow: 0 12px 28px rgba(76, 29, 149, 0.15);
 }
 
-.dark .group.card.cursor-pointer.transform.hover\\:scale-105:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
-}
+
 
 /* Text Utilities */
 .line-clamp-2 {
@@ -484,9 +448,7 @@
   color: #2563eb;
 }
 
-.dark .group-hover\\:text-blue-400:hover {
-  color: #60a5fa;
-}
+
 
 /* Additional Typography Adjustments for Project Cards */
 .text-sm.text-secondary {
@@ -685,15 +647,9 @@
   flex-shrink: 0;
 }
 
-.dark .project-card-metric {
-  background: var(--bg-secondary);
-  border-color: var(--border-light);
-}
 
-.dark .project-card-metric:hover {
-  background: var(--bg-muted);
-  border-color: var(--brand-red);
-}
+
+
 
 /* Mobile Responsive for Card Metrics */
 @media (max-width: 640px) {

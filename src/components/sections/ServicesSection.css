@@ -32,9 +32,6 @@
   pointer-events: none;
 }
 
-.dark .services {
-  background: var(--bg-secondary, #0f1a2e);
-}
 
 .services-container {
   max-width: 1200px;

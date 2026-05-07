@@ -15,22 +15,21 @@ const PlayIcon = () => (
 );
 
 const stats = [
-  { number: '20+', label: 'Projects Completed' },
-  { number: '15+', label: 'Happy Clients' },
+  { number: '4', label: 'Projects Completed' },
+  { number: '4', label: 'Happy Clients' },
   { number: '4+',  label: 'Years Experience' },
 ];
 
 const texts = [
-  'AI Solutions',
-  'Web Applications',
-  'Mobile Apps',
-  'Data Analytics',
+  'MULTI AGENTIC SYSTEMS',
+  'WEB APPLICATIONS',
+  'MOBILE APPLICATIONS',
+  'CUSTOM AI SOLUTIONS',
 ];
 
 export const HeroSectionSimple = () => {
-  const [typedText, setTypedText]     = useState(texts[0]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting]   = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isClient, setIsClient]       = useState(false);
 
   useEffect(() => { setIsClient(true); }, []);
@@ -38,25 +37,16 @@ export const HeroSectionSimple = () => {
   useEffect(() => {
     if (!isClient) return;
 
-    const typeSpeed  = isDeleting ? 50 : 100;
-    const currentText = texts[currentIndex];
-
-    const timer = setTimeout(() => {
-      if (!isDeleting && typedText === currentText) {
-        setTimeout(() => setIsDeleting(true), 2200);
-      } else if (isDeleting && typedText === '') {
-        setIsDeleting(false);
+    const timer = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % texts.length);
-      } else {
-        const next = isDeleting
-          ? currentText.substring(0, typedText.length - 1)
-          : currentText.substring(0, typedText.length + 1);
-        setTypedText(next);
-      }
-    }, typeSpeed);
+        setIsVisible(true);
+      }, 600); // Matches CSS transition duration
+    }, 3500);
 
-    return () => clearTimeout(timer);
-  }, [typedText, currentIndex, isDeleting, isClient]);
+    return () => clearInterval(timer);
+  }, [isClient]);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -76,11 +66,9 @@ export const HeroSectionSimple = () => {
 
           {/* Title */}
           <h1 className="hero-title">
-            Building Tomorrow&apos;s{' '}
-            <span className="hero-animated-text">
-              {typedText}
+            <span className={`hero-flip-text ${isVisible ? 'visible' : 'exit'}`}>
+              {texts[currentIndex]}
             </span>
-            {isClient && <span className="hero-cursor" aria-hidden="true"></span>}
           </h1>
 
           {/* Subtitle */}

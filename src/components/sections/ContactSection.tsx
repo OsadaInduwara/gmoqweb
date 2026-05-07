@@ -222,13 +222,13 @@ export const ContactSection = () => {
                           {info.description}
                         </p>
                         {info.action.startsWith('#') ? (
-                          <p className="text-sm font-medium text-purple-700 dark:text-purple-400">
+                          <p className="text-sm font-medium text-purple-700">
                             {info.contact}
                           </p>
                         ) : (
                           <a
                             href={info.action}
-                            className="text-sm font-medium text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors duration-200"
+                            className="text-sm font-medium text-purple-700 hover:text-purple-900 transition-colors duration-200"
                           >
                             {info.contact}
                           </a>
@@ -246,16 +246,16 @@ export const ContactSection = () => {
             <div className="card">
               <h3 className="text-xl font-bold text-primary mb-medium">Send us a Message</h3>
               {submitStatus === 'success' && (
-                <div className="mb-medium p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg">
-                  <p className="text-green-800 dark:text-green-400 text-sm">
+                <div className="mb-medium p-4 bg-green-50 border border-green-200 rounded-lg">
+                    <p className="text-green-800 text-sm">
                     Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
               )}
 
               {submitStatus === 'error' && (
-                <div className="mb-medium p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg">
-                  <p className="text-red-800 dark:text-red-400 text-sm">
+                <div className="mb-medium p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-800 text-sm">
                     Sorry, there was an error sending your message. Please try again or contact us directly.
                   </p>
                 </div>
@@ -274,7 +274,7 @@ export const ContactSection = () => {
                       onChange={handleInputChange}
 
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -288,7 +288,7 @@ export const ContactSection = () => {
                       onChange={handleInputChange}
 
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -304,7 +304,7 @@ export const ContactSection = () => {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Your Company"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                   <div>
@@ -317,7 +317,7 @@ export const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="+1 (555) 123-4567"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     />
                   </div>
                 </div>
@@ -332,7 +332,7 @@ export const ContactSection = () => {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                       required
                     >
                       <option value="">Select project type</option>
@@ -349,7 +349,7 @@ export const ContactSection = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     >
                       <option value="">Select budget range</option>
                       {budgetRanges.map((range) => (
@@ -369,7 +369,7 @@ export const ContactSection = () => {
                     value={formData.timeline}
                     onChange={handleInputChange}
                     placeholder="When do you need this completed?"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                   />
                 </div>
 
@@ -383,7 +383,7 @@ export const ContactSection = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
                     placeholder="Tell us about your project, goals, and any specific requirements..."
                     required
                   />

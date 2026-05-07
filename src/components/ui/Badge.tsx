@@ -15,12 +15,12 @@ export interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
 const Badge = forwardRef<HTMLDivElement, BadgeProps>(
   ({ variant = 'default', size = 'md', children, className, ...props }, ref) => {
     const variants = {
-      default: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200',
-      primary: 'bg-primary-pink-100 text-primary-pink-800 dark:bg-primary-pink-900/30 dark:text-primary-pink-200',
-      secondary: 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',
-      success: 'bg-accent-green/10 text-accent-green dark:bg-accent-green/20',
-      warning: 'bg-primary-yellow-100 text-primary-yellow-800 dark:bg-primary-yellow-900/30 dark:text-primary-yellow-200',
-      danger: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-200',
+      default: 'bg-gray-100 text-gray-800',
+      primary: 'bg-primary-pink-100 text-primary-pink-800',
+      secondary: 'bg-gray-100 text-gray-700',
+      success: 'bg-accent-green/10 text-accent-green',
+      warning: 'bg-primary-yellow-100 text-primary-yellow-800',
+      danger: 'bg-red-100 text-red-800',
       gradient: 'bg-gradient-to-r from-primary-pink-500 to-primary-yellow-500 text-white'
     };
 

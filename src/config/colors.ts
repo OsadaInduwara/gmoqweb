@@ -27,16 +27,7 @@ export const colors = {
     }
   },
   
-  // Dark Theme Colors
-  dark: {
-    bg: {
-      primary: '#0A0E27',
-      secondary: '#1A1F3A',
-      tertiary: '#252B48',
-      card: 'rgba(26, 31, 58, 0.5)',
-      overlay: 'rgba(10, 14, 39, 0.95)'
-    }
-  },
+
   
   // Light Theme Colors
   light: {
@@ -57,19 +48,9 @@ export const colors = {
     orange: '#FF6B35'
   },
   
-  // Text Colors
   text: {
-    primary: {
-      dark: '#FFFFFF',
-      light: '#0A0E27'
-    },
-    secondary: {
-      dark: '#B8BED9',
-      light: '#64748B'
-    },
-    muted: {
-      dark: '#8B92B1',
-      light: '#94A3B8'
-    }
+    primary: '#0A0E27',
+    secondary: '#64748B',
+    muted: '#94A3B8'
   }
 };

@@ -116,34 +116,34 @@ type ColorKey = 'blue' | 'purple' | 'green' | 'pink' | 'orange' | 'cyan';
 
 const colorClasses: Record<ColorKey, { icon: string; bg: string; border: string }> = {
   blue: {
-    icon: 'text-blue-600 dark:text-blue-400',
-    bg: 'bg-blue-50 dark:bg-blue-900/20',
-    border: 'border-blue-200 dark:border-blue-800'
+    icon: 'text-blue-600',
+    bg: 'bg-blue-50',
+    border: 'border-blue-200'
   },
   purple: {
-    icon: 'text-purple-600 dark:text-purple-400',
-    bg: 'bg-purple-50 dark:bg-purple-900/20',
-    border: 'border-purple-200 dark:border-purple-800'
+    icon: 'text-purple-600',
+    bg: 'bg-purple-50',
+    border: 'border-purple-200'
   },
   green: {
-    icon: 'text-green-600 dark:text-green-400',
-    bg: 'bg-green-50 dark:bg-green-900/20',
-    border: 'border-green-200 dark:border-green-800'
+    icon: 'text-green-600',
+    bg: 'bg-green-50',
+    border: 'border-green-200'
   },
   pink: {
-    icon: 'text-pink-600 dark:text-pink-400',
-    bg: 'bg-pink-50 dark:bg-pink-900/20',
-    border: 'border-pink-200 dark:border-pink-800'
+    icon: 'text-pink-600',
+    bg: 'bg-pink-50',
+    border: 'border-pink-200'
   },
   orange: {
-    icon: 'text-orange-600 dark:text-orange-400',
-    bg: 'bg-orange-50 dark:bg-orange-900/20',
-    border: 'border-orange-200 dark:border-orange-800'
+    icon: 'text-orange-600',
+    bg: 'bg-orange-50',
+    border: 'border-orange-200'
   },
   cyan: {
-    icon: 'text-cyan-600 dark:text-cyan-400',
-    bg: 'bg-cyan-50 dark:bg-cyan-900/20',
-    border: 'border-cyan-200 dark:border-cyan-800'
+    icon: 'text-cyan-600',
+    bg: 'bg-cyan-50',
+    border: 'border-cyan-200'
   }
 };
 

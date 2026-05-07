@@ -14,7 +14,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "GyrixAI | AI-Powered Software Solutions",
+  title: "GyrixAI | Software Solutions",
   description: "GyrixAI builds cutting-edge AI solutions, custom software, and intelligent digital products that drive measurable results for forward-thinking businesses.",
   keywords: ["GyrixAI", "AI", "Machine Learning", "Software Development", "Web Development", "Mobile Apps", "Data Analytics"],
   icons: {

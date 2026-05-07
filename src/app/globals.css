@@ -97,23 +97,7 @@ body {
   --shadow-blue:   0 8px 32px rgba(27, 66, 133, 0.25);
 }
 
-.dark {
-  --bg-primary:   #080f1e;
-  --bg-secondary: #0f1a2e;
-  --bg-muted:     #162038;
-  --bg-accent:    rgba(37, 99, 235, 0.12);
 
-  --text-primary:   #f0f4ff;
-  --text-secondary: #a8bcdf;
-  --text-muted:     #6482aa;
-
-  --border-light: #1e3154;
-  --border-muted: #2a4070;
-
-  --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.4);
-  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg:  0 12px 40px rgba(0, 0, 0, 0.6);
-}
 
 /* ==========================================
    TYPOGRAPHY

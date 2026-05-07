@@ -15,10 +15,10 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ variant = 'default', hover = true, children, className, ...props }, ref) => {
     const variants = {
-      default: 'bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700',
-      glass: 'glass backdrop-blur-md bg-white/10 dark:bg-gray-900/10',
-      gradient: 'bg-gradient-to-br from-white/90 to-gray-50/90 dark:from-gray-800/90 dark:to-gray-900/90',
-      bordered: 'bg-white dark:bg-gray-800 border-2 border-primary-pink-500/20'
+      default: 'bg-white/90 backdrop-blur-sm border border-gray-200',
+      glass: 'glass backdrop-blur-md bg-white/10',
+      gradient: 'bg-gradient-to-br from-white/90 to-gray-50/90',
+      bordered: 'bg-white border-2 border-primary-pink-500/20'
     };
 
     return (
@@ -50,7 +50,7 @@ const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingEleme
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn('text-xl font-semibold text-gray-900 dark:text-gray-100', className)}
+      className={cn('text-xl font-semibold text-gray-900', className)}
       {...props}
     />
   )
@@ -61,7 +61,7 @@ const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLPara
   ({ className, ...props }, ref) => (
     <p
       ref={ref}
-      className={cn('text-gray-600 dark:text-gray-300 mt-2', className)}
+      className={cn('text-gray-600 mt-2', className)}
       {...props}
     />
   )
