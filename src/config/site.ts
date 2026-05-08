@@ -11,10 +11,6 @@ export const siteConfig = {
     'Software Development',
     'Web Development',
     'Mobile Apps',
-    'Custom Software',
-    'Technology Solutions',
-    'Innovation',
-    'Digital Transformation'
   ],
   links: {
     github: 'https://github.com/gyrixai',
