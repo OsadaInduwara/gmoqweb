@@ -41,7 +41,7 @@ export const Navigation = () => {
   const links = [
     { label: 'Home',      id: 'home' },
     { label: 'Services',  id: 'services' },
-    { label: 'Portfolio', id: 'portfolio' },
+    { label: 'Products', id: 'products' },
     { label: 'About',     id: 'about' },
     { label: 'Contact',   id: 'contact' },
   ];

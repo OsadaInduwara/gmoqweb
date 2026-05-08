@@ -251,12 +251,12 @@ export const ServicesSection = () => {
               </button>
               <button
                 onClick={() => {
-                  const element = document.getElementById('portfolio');
+                  const element = document.getElementById('products');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="btn btn-accent btn-lg"
               >
-                View Our Portfolio
+                View Our Products
               </button>
             </div>
           </div>

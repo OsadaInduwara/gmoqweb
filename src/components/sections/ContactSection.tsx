@@ -5,32 +5,33 @@ import { useState } from 'react';
 // Simple icons
 const Mail = () => (
   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 7L12 13L22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17V7Z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 13L12 21" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M22 7L17 11" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 7L7 11" />
+    <circle cx="12" cy="7" r="1.5" fill="currentColor" />
   </svg>
 );
 
 const Phone = () => (
   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-  </svg>
-);
-
-const MapPin = () => (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-  </svg>
-);
-
-const Clock = () => (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.5 3H9.5C8.11929 3 7 4.11929 7 5.5V18.5C7 19.8807 8.11929 21 9.5 21H14.5C15.8807 21 17 19.8807 17 18.5V5.5C17 4.11929 15.8807 3 14.5 3Z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 21V18" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 21V18" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6H12.01" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 9C21 9 20 10 20 12C20 14 21 15 21 15" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M23 7C23 7 21.5 9 21.5 12C21.5 15 23 17 23 17" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9C3 9 4 10 4 12C4 14 3 15 3 15" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M1 7C1 7 2.5 9 2.5 12C2.5 15 1 17 1 17" />
   </svg>
 );
 
 const Send = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 12L22 2L15 22L11 13L2 12Z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M22 2L11 13" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 13L8 20L5 15" />
+    <circle cx="2" cy="22" r="1.5" fill="currentColor" />
   </svg>
 );
 
@@ -39,8 +40,8 @@ const contactInfo = [
     icon: Mail,
     title: 'Email Us',
     description: 'Send us an email anytime',
-    contact: 'hello@gmoqai.com',
-    action: 'mailto:hello@gmoqai.com'
+    contact: 'hello@gyrixai.com',
+    action: 'mailto:hello@gyrixai.com'
   },
   {
     icon: Phone,
@@ -48,20 +49,6 @@ const contactInfo = [
     description: 'Mon-Fri from 9am to 6pm',
     contact: '+94 70 143 3563',
     action: 'tel:+94701433563'
-  },
-  {
-    icon: MapPin,
-    title: 'Visit Us',
-    description: 'Come say hello at our office',
-    contact: 'Colombo, Sri Lanka',
-    action: '#'
-  },
-  {
-    icon: Clock,
-    title: 'Business Hours',
-    description: 'Our standard working hours',
-    contact: 'Mon-Fri: 9AM - 6PM IST',
-    action: '#'
   }
 ];
 
@@ -139,7 +126,7 @@ export const ContactSection = () => {
           timeline: formData.timeline || 'Not specified',
           message: formData.message,
           _replyto: formData.email,
-          _subject: `GMOQAI Contact Form: ${formData.name} - ${formData.projectType}`
+          _subject: `GyrixAI Contact Form: ${formData.name} - ${formData.projectType}`
         }),
       });
 
@@ -176,9 +163,7 @@ export const ContactSection = () => {
       <div className="contact-container">
         {/* Header */}
         <div className="text-center mb-section">
-          <div className="section-divider-icon">
-            <span className="section-divider-text">Let&apos;s Talk</span>
-          </div>
+          <span className="section-divider-text">Let&apos;s Talk</span>
 
           <h2 className="text-primary mb-large">
             Let&apos;s Start Your Next Project
@@ -186,7 +171,7 @@ export const ContactSection = () => {
 
           <p className="text-xl text-secondary max-w-3xl mx-auto">
             Ready to transform your business with cutting-edge technology?
-            We'd love to hear about your project and discuss how we can help.
+            We&apos;d love to hear about your project and discuss how we can help.
           </p>
         </div>
 
@@ -205,35 +190,27 @@ export const ContactSection = () => {
             </div>
 
             {/* Contact Info Cards */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
-                  <div key={index} className="card group cursor-pointer">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-purple-700 to-orange-500 flex items-center justify-center text-white group-hover:shadow-lg transition-all duration-300">
-                        <Icon />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-primary mb-1">
-                          {info.title}
-                        </h4>
-                        <p className="text-sm text-muted mb-small">
-                          {info.description}
-                        </p>
-                        {info.action.startsWith('#') ? (
-                          <p className="text-sm font-medium text-purple-700">
-                            {info.contact}
-                          </p>
-                        ) : (
-                          <a
-                            href={info.action}
-                            className="text-sm font-medium text-purple-700 hover:text-purple-900 transition-colors duration-200"
-                          >
-                            {info.contact}
-                          </a>
-                        )}
-                      </div>
+                  <div key={index} className="contact-info-item group cursor-pointer">
+                    <div className="icon-wrapper">
+                      <Icon />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold text-primary mb-1">
+                        {info.title}
+                      </h4>
+                      <p className="text-sm text-secondary mb-small">
+                        {info.description}
+                      </p>
+                      <a
+                        href={info.action}
+                        className="text-sm font-bold text-purple-700 hover:text-purple-900 transition-colors duration-200"
+                      >
+                        {info.contact}
+                      </a>
                     </div>
                   </div>
                 );
@@ -246,16 +223,16 @@ export const ContactSection = () => {
             <div className="card">
               <h3 className="text-xl font-bold text-primary mb-medium">Send us a Message</h3>
               {submitStatus === 'success' && (
-                <div className="mb-medium p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-green-800 text-sm">
+                <div className="status-message status-success">
+                    <p>
                     Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
               )}
 
               {submitStatus === 'error' && (
-                <div className="mb-medium p-4 bg-red-50 border border-red-200 rounded-lg">
-                    <p className="text-red-800 text-sm">
+                <div className="status-message status-error">
+                    <p>
                     Sorry, there was an error sending your message. Please try again or contact us directly.
                   </p>
                 </div>
@@ -264,21 +241,20 @@ export const ContactSection = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name and Email */}
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-small">
+                  <div className="form-group">
+                    <label className="form-label">
                       Full Name *
                     </label>
                     <input
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="form-input"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-small">
+                  <div className="form-group">
+                    <label className="form-label">
                       Email Address *
                     </label>
                     <input
@@ -286,17 +262,16 @@ export const ContactSection = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="form-input"
                     />
                   </div>
                 </div>
 
                 {/* Company and Phone */}
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-small">
+                  <div className="form-group">
+                    <label className="form-label">
                       Company
                     </label>
                     <input
@@ -304,11 +279,11 @@ export const ContactSection = () => {
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Your Company"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="form-input"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-small">
+                  <div className="form-group">
+                    <label className="form-label">
                       Phone Number
                     </label>
                     <input
@@ -317,22 +292,22 @@ export const ContactSection = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="+1 (555) 123-4567"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="form-input"
                     />
                   </div>
                 </div>
 
                 {/* Project Type and Budget */}
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-small">
+                  <div className="form-group">
+                    <label className="form-label">
                       Project Type *
                     </label>
                     <select
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="form-select"
                       required
                     >
                       <option value="">Select project type</option>
@@ -341,15 +316,15 @@ export const ContactSection = () => {
                       ))}
                     </select>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-primary mb-small">
+                  <div className="form-group">
+                    <label className="form-label">
                       Budget Range
                     </label>
                     <select
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                      className="form-select"
                     >
                       <option value="">Select budget range</option>
                       {budgetRanges.map((range) => (
@@ -360,8 +335,8 @@ export const ContactSection = () => {
                 </div>
 
                 {/* Timeline */}
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-small">
+                <div className="form-group">
+                  <label className="form-label">
                     Timeline
                   </label>
                   <input
@@ -369,13 +344,13 @@ export const ContactSection = () => {
                     value={formData.timeline}
                     onChange={handleInputChange}
                     placeholder="When do you need this completed?"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                    className="form-input"
                   />
                 </div>
 
                 {/* Message */}
-                <div>
-                  <label className="block text-sm font-medium text-primary mb-small">
+                <div className="form-group">
+                  <label className="form-label">
                     Project Details *
                   </label>
                   <textarea
@@ -383,7 +358,7 @@ export const ContactSection = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={5}
-                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 focus:ring-2 focus:ring-purple-600 focus:border-purple-600 transition-all duration-200"
+                    className="form-textarea"
                     placeholder="Tell us about your project, goals, and any specific requirements..."
                     required
                   />
@@ -393,7 +368,7 @@ export const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary btn-lg w-full flex items-center justify-center gap-2"
+                  className="btn btn-primary w-full flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? 'Sending...' : (
                     <>
@@ -403,7 +378,7 @@ export const ContactSection = () => {
                   )}
                 </button>
 
-                <p className="text-xs text-muted text-center">
+                <p className="text-xs text-secondary text-center opacity-70">
                   By submitting this form, you agree to our privacy policy. We&apos;ll never share your information.
                 </p>
               </form>

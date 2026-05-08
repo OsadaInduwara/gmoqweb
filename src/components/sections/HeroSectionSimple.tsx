@@ -83,7 +83,7 @@ export const HeroSectionSimple = () => {
               Start Your Project
               <ArrowRight />
             </button>
-            <button onClick={() => scrollTo('portfolio')} className="hero-button-secondary" id="hero-cta-secondary">
+            <button onClick={() => scrollTo('products')} className="hero-button-secondary" id="hero-cta-secondary">
               <PlayIcon />
               Explore Our Work
             </button>

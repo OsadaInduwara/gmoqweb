@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     });
 
     const emailTemplate = `
-    <h2>New Contact Form Submission - GMOQAI</h2>
+    <h2>New Contact Form Submission - GyrixAI</h2>
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>Email:</strong> ${email}</p>
     ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
@@ -51,14 +51,14 @@ export async function POST(req: NextRequest) {
     <p>${message.replace(/\n/g, '<br>')}</p>
     
     <hr>
-    <p><em>This message was sent from the GMOQAI website contact form.</em></p>
+    <p><em>This message was sent from the GyrixAI website contact form.</em></p>
     `;
 
     console.log('Sending email to your Gmail...');
 
     // Send email to yourself
     await transporter.sendMail({
-      from: '"GMOQAI Website" <induwaragallaba@gmail.com>',
+      from: '"GyrixAI Website" <induwaragallaba@gmail.com>',
       to: 'induwaragallaba@gmail.com',
       subject: `New Contact Form: ${name} - ${projectType}`,
       html: emailTemplate,

@@ -141,17 +141,17 @@ export const PortfolioSection = () => {
   const featuredProjects = portfolioData.filter(project => project.featured);
 
   return (
-    <section id="portfolio" className="portfolio">
+    <section id="products" className="portfolio">
       <div className="portfolio-container">
         
         {/* Header */}
         <div className="text-center mb-section">
           <div className="section-divider-dots">
-            <span className="section-divider-text">Our Work</span>
+            <span className="section-divider-text">Products</span>
           </div>
           
           <h2 className="text-primary mb-large">
-            Featured Projects & Case Studies
+            Our Products
           </h2>
           
           <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
